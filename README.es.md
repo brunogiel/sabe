@@ -1,6 +1,6 @@
 # SecondBrain
 
-Un método simple e instalable para ordenar cómo trabajás con **Claude Code** (o **Cowork**) y hacerlo crecer en el tiempo. Un archivo te deja arrancando. Un skill `/coach` te va subiendo de nivel, de a un escalón.
+Un método simple e instalable para ordenar cómo trabajás con **Claude Code** (o **Cowork**) y hacerlo crecer en el tiempo. Un archivo te deja arrancando. Un skill `/second-brain-coach` te va subiendo de nivel, de a un escalón.
 
 Es para cualquiera: no hace falta que programes. Si programás, la división código/contexto ya viene contemplada.
 
@@ -22,7 +22,7 @@ Te crea las carpetas PARA y los archivos base en la carpeta actual, y deja los s
 
 ¿No estás en la terminal (ej. Cowork desktop)? Bajá el zip o hacé `git clone`, o abrí Claude en la carpeta y decile *"armame el sistema"*.
 
-Después abrí Claude Code o Cowork en la carpeta y escribí **`/coach`**.
+Después abrí Claude Code o Cowork en la carpeta y escribí **`/second-brain-coach`**.
 
 ## La escalera (crecé de a poco)
 
@@ -36,7 +36,7 @@ No armás todo el día uno. Subís de a un escalón.
 | **3** | Tu primer skill (la regla de 3) |
 | **4** | (si programás) split código/contexto |
 
-¿No sabés en qué escalón estás o qué sigue? Pedile **`/coach`**. Te ubica y te propone el próximo paso. Propone, vos decidís.
+¿No sabés en qué escalón estás o qué sigue? Pedile **`/second-brain-coach`**. Te ubica y te propone el próximo paso. Propone, vos decidís.
 
 ## Qué trae adentro
 
@@ -45,7 +45,7 @@ No armás todo el día uno. Subís de a un escalón.
 - **`reference.md`** — el manual que crece: PARA, la regla de 3, pasos mecánicos vs de criterio (DET/LAT), convenciones.
 - **`MEMORIA.md`** — hechos que tu asistente acumula con el tiempo.
 - **Skills** (dormidos hasta que una frase los despierta):
-  - **`coach`** — te sube de nivel.
+  - **`second-brain-coach`** — te sube de nivel.
   - **`redactar`** — escribe en tu voz (la aprende de textos tuyos).
   - **`anti-slop`** — le saca el olor a IA a cualquier texto.
 

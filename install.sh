@@ -18,7 +18,7 @@ BRANCH="main"
 RAW="https://raw.githubusercontent.com/${REPO}/${BRANCH}"
 
 TEMPLATES=("CLAUDE.md" "sobre-mi.md" "como-trabajo.md" "reference.md" "mi-estilo.md" "MEMORIA.md")
-SKILLS=("coach" "redactar" "anti-slop")
+SKILLS=("second-brain-coach" "redactar" "anti-slop")
 SKILLS_DIR="${HOME}/.claude/skills"
 
 echo ""
@@ -50,5 +50,5 @@ for s in "${SKILLS[@]}"; do
 done
 
 echo ""
-echo "Listo. Abrí Claude Code (o Cowork) en esta carpeta y escribí:  /coach"
+echo "Listo. Abrí Claude Code (o Cowork) en esta carpeta y escribí:  /second-brain-coach"
 echo ""

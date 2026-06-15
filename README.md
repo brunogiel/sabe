@@ -1,6 +1,6 @@
 # SecondBrain
 
-A simple, installable method to organize how you work with **Claude Code** (or **Cowork**) and grow it over time. One file gets you started. A `/coach` skill walks you up, one level at a time.
+A simple, installable method to organize how you work with **Claude Code** (or **Cowork**) and grow it over time. One file gets you started. A `/second-brain-coach` skill walks you up, one level at a time.
 
 Built for anyone: you don't need to code. If you do, the code/context split is already baked in.
 
@@ -24,7 +24,7 @@ This creates your PARA folders and starter files in the current directory, and i
 
 Not on the terminal (e.g. Cowork desktop)? Download the zip or `git clone`, or just open Claude in the folder and say *"set up my system"*.
 
-Then open Claude Code or Cowork in the folder and type **`/coach`**.
+Then open Claude Code or Cowork in the folder and type **`/second-brain-coach`**.
 
 ## The ladder (grow one rung at a time)
 
@@ -38,7 +38,7 @@ You don't build the whole system on day one. You climb.
 | **3** | Your first skill (the rule of 3) |
 | **4** | (if you code) code/context split |
 
-Not sure where you are or what's next? Ask **`/coach`**. It diagnoses your level and proposes the next step. It proposes, you decide.
+Not sure where you are or what's next? Ask **`/second-brain-coach`**. It diagnoses your level and proposes the next step. It proposes, you decide.
 
 ## What's inside
 
@@ -47,7 +47,7 @@ Not sure where you are or what's next? Ask **`/coach`**. It diagnoses your level
 - **`reference.md`** — the manual that grows: PARA, the rule of 3, mechanical vs judgment steps (DET/LAT), conventions.
 - **`MEMORIA.md`** — facts your assistant accumulates over time.
 - **Skills** (dormant until a phrase triggers them):
-  - **`coach`** — walks you up the levels.
+  - **`second-brain-coach`** — walks you up the levels.
   - **`redactar`** — writes in your voice (learns it from your own sample texts).
   - **`anti-slop`** — strips the "AI smell" out of any text.
 
