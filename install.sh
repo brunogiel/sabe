@@ -28,7 +28,7 @@ ROOT_FILES=("CLAUDE.md" "ESTADO.md" "AGENTS.md")          # raíz, visibles
 YO_DIR="2. Áreas/yo"
 YO_FILES=("sobre-mi.md" "como-trabajo.md" "mi-estilo.md" "MEMORIA.md")
 # El motor: los skills del kit. Global, se reinstala con el kit en cada máquina.
-SKILLS=("second-brain-coach" "abrir-sesion" "cerrar-sesion" "actualizar" "redactar" "anti-slop" "crear-skill" "auditar-sistema" "triage-mails" "migrar-de-claude-projects")
+SKILLS=("second-brain-coach" "abrir-sesion" "cerrar-sesion" "actualizar" "redactar" "anti-slop" "crear-skill" "auditar-sistema" "triage" "migrar-de-claude-projects")
 SKILLS_DIR="${HOME}/.claude/skills"
 SB_DIR=".secondbrain"
 

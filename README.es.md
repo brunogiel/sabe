@@ -66,7 +66,7 @@ Siendo honestos con la línea: el **cerebro** (tu texto) es del todo portable; e
   - **`anti-slop`**: le saca el olor a IA a cualquier texto.
   - **`crear-skill`**: te ayuda a armar un skill nuevo bien hecho.
   - **`auditar-sistema`**: una revisión de salud de tu sistema (va bien como rutina).
-  - **`triage-mails`**: un digest del inbox a la mañana (necesita Gmail por MCP).
+  - **`triage`**: tu brief de la mañana y los accionables, cruzando tus fuentes: mail, calendario (reporte de citas) y tu chat/tareas de trabajo (Slack, Jira, Linear, Trello, Notion comments, lo que uses). Cada fuente necesita su MCP; con el mail solo ya arranca.
   - **`migrar-de-claude-projects`**: trae tus Projects cerrados de Claude al sistema.
 
 ## Filosofía

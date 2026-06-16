@@ -68,7 +68,7 @@ To be honest about the line: the **brain** (your text) is fully portable; the **
   - **`anti-slop`** — strips the "AI smell" out of any text.
   - **`crear-skill`** — helps you build a new skill the right way.
   - **`auditar-sistema`** — a health check of your system (great as a routine).
-  - **`triage-mails`** — a morning inbox digest (needs Gmail via MCP).
+  - **`triage`** — your morning brief and action items, pulled across your sources: mail, calendar (a meetings report) and your work chat/tasks (Slack, Jira, Linear, Trello, Notion comments, whatever you use). Each source needs its MCP; mail alone is enough to start.
   - **`migrar-de-claude-projects`** — brings your closed Claude Projects into the system.
 
 ## Philosophy
