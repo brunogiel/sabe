@@ -21,7 +21,7 @@ Preguntá: ¿ya hiciste esta tarea 3 veces? Si no, avisá que es prematuro y ofr
 4. **[LAT]** Qué archivos lee y escribe (para no pisar nada por accidente).
 5. **[LAT]** Cómo se ve un buen resultado: qué devuelve + 2 o 3 señales de que salió bien.
 6. **[LAT] (eval-first, recomendado)** Antes de escribir las instrucciones, anotá 2-3 casos concretos de prueba con su resultado esperado ("si digo X, debería hacer Y"). Es la práctica #1 de la doctrina oficial de skills: te asegura que resolvés un problema real, no uno imaginario, y te deja con qué chequearlo después. Ofrecelo; si dice que no, seguí.
-7. **[DET]** Escribí el `SKILL.md` en `.claude/skills/<nombre>/SKILL.md` **de la carpeta del usuario** (ahí es donde el asistente lo descubre y lo dispara con su frase; el atajo `skills/` apunta a la misma carpeta para verlo y editarlo). Después anotalo en la sección "Mis skills" del `CLAUDE.md` raíz, que es el mapa para el humano.
+7. **[DET]** Escribí el `SKILL.md` en `skills/<nombre>/SKILL.md` **de la carpeta del usuario** (carpeta a secas y a la vista; la abre y la edita). **Y anotalo en la tabla "Mis skills" del `CLAUDE.md` raíz con su frase gatillo — ese paso es lo que lo hace disparar:** el asistente lo encuentra por la tabla, no por la carpeta. Sin la fila, el archivo está pero no se activa. (Así anda igual en Code, Cowork y Codex.)
 
 ## Errores que le hacés esquivar (de reference, sección 5)
 - Clonar un skill cambiando un dato: parametrizá, que tome el dato como entrada.

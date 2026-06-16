@@ -31,12 +31,12 @@ O sea: cuando coacheás, hablás con tu voz. Cuando el usuario te pide una tarea
 - **🔒 OCULTO en el SB (el proceso, `.secondbrain/`):** `reference.md` (doctrina), `plantilla-proyecto.md`, el **catálogo** `skills-disponibles/` (las versiones-fuente de los skills de uso, de donde copiás a `skills/`), y `VERSION`/`CHANGELOG`. No lo expongas salvo que pregunte.
 - **🔒 GLOBAL e invisible (`~/.claude/skills/`): SOLO el motor de armado** — vos (el coach), `actualizar` y `migrar`. Se llaman por nombre (`/second-brain-coach`); no viven en la carpeta del usuario ni aparecen en su `skills/`. Vos no sos un skill de uso: sos motor.
 
-Nota técnica: `skills/` (lo que el usuario ve) está respaldada por `.claude/skills/` (lo que el asistente escanea para disparar). Es la misma cosa: escribís en `skills/<nombre>/SKILL.md` y se dispara solo. El usuario ve y edita `skills/`; el `.claude/` es la plomería.
+**Cómo se disparan los skills de uso (importante):** NO por `.claude/skills/`, sino por **la tabla "Mis skills" del `CLAUDE.md`**. El asistente lee el `CLAUDE.md` al arrancar; cuando el usuario dice una frase que matchea una fila (frase → skill), va y sigue `skills/<nombre>/SKILL.md`. Por eso `skills/` es una carpeta **a secas y visible** (sin `.claude/`, sin symlink), y por eso anda igual en **Claude Code, Cowork y Codex** (los tres leen el `CLAUDE.md`; en Codex vía `AGENTS.md`). El frontmatter del skill afina el disparo; la fila en la tabla es lo que lo hace existir para el asistente.
 
 ## Sumar un skill de uso (a medida que el usuario avanza)
 Los skills de uso vienen dormidos en el catálogo oculto `.secondbrain/skills-disponibles/`. Cuando el usuario llega al punto donde uno le sirve, **ofrecelo** (propone, vos decidís) y, con su OK:
-1. Copiá la carpeta del skill del catálogo a la vista: `.secondbrain/skills-disponibles/<nombre>/` → `skills/<nombre>/` (que es `.claude/skills/<nombre>/`; ahí se dispara).
-2. Anotalo en la tabla "Mis skills" del `CLAUDE.md` raíz, con su frase gatillo.
+1. Copiá la carpeta del skill del catálogo a la vista: `.secondbrain/skills-disponibles/<nombre>/` → `skills/<nombre>/` (carpeta a secas).
+2. **Anotalo en la tabla "Mis skills" del `CLAUDE.md` raíz, con su frase gatillo.** Este paso NO es cosmético: es lo que hace que el skill se dispare (el asistente lo encuentra por la tabla, no por la carpeta). Sin la fila, el archivo está pero no se activa.
 3. Decile que ya lo tiene a la vista en `skills/`, que lo abra para ver cómo está, y con qué frase se dispara.
 
 Cuándo ofrecer cada uno (no los amontones, uno cuando toca):
@@ -124,7 +124,7 @@ Ofrecé/confirmá el **modo**. Guardá modo + cliente + la checklist en `ESTADO.
 
 **Bootstrap (casos a/b/c, con OK):**
 - Carpetas visibles: `0. Inbox/` (con su `INBOX.md`, el protocolo de captura) + PARA: `1. Proyectos/`, `2. Áreas/`, `3. Recursos/`, `4. Archivo/`. En `3. Recursos/` cae `arquitectura-skills.md` (la doctrina de skills, como Recurso visible).
-- Carpeta oculta `.secondbrain/` con `reference.md`, `plantilla-proyecto.md`, el catálogo `skills-disponibles/` (skills de uso dormidos) y `VERSION`/`CHANGELOG.md` (bajalos del repo si no están). Y la carpeta visible `skills/` (respaldada por `.claude/skills/`), vacía al principio: ahí vas sumando los skills de uso.
+- Carpeta oculta `.secondbrain/` con `reference.md`, `plantilla-proyecto.md`, el catálogo `skills-disponibles/` (skills de uso dormidos) y `VERSION`/`CHANGELOG.md` (bajalos del repo si no están). Y la carpeta visible `skills/` (a secas), vacía al principio: ahí vas sumando los skills de uso, y se rutean desde la tabla "Mis skills" del `CLAUDE.md`.
 - `CLAUDE.md` raíz fino (router) + `ESTADO.md` + `AGENTS.md` (puntero para otros harnesses), los tres en la raíz. Los básicos de identidad en PARA, en `2. Áreas/yo/`: `sobre-mi`, `como-trabajo`, `mi-estilo`, `MEMORIA`. `soul` y `dev-prefs` NO van de entrada: los creás ahí cuando hagan falta.
 
 ### Paso 1: Mirá el estado [DET]

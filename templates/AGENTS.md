@@ -8,7 +8,5 @@
 
 La fuente de verdad de este sistema es **`CLAUDE.md`** (en esta misma carpeta). Leelo entero: es el router.
 
-- El cerebro (tus carpetas de texto, tu identidad, tus proyectos) es portable: funciona con cualquier asistente.
-- El motor (los skills `.claude/skills/`, los `/comandos`) está pensado para Claude Code / Cowork. En otro harness, lo que viaja es el texto, no los disparadores.
-
-Para crecer o ubicarte, abrí esto en Claude y escribí `/second-brain-coach`.
+- El cerebro (carpetas de texto, identidad, proyectos) **y los skills de uso** son portables. Los skills viven en `skills/` (carpeta a la vista) y se disparan por la **tabla "Mis skills" del `CLAUDE.md`**: leé esa tabla y, cuando el usuario diga una de esas frases, seguí el `skills/<nombre>/SKILL.md` correspondiente. Así andan igual acá que en Claude.
+- Lo único atado a Claude es el motor de armado (el comando `/second-brain-coach` y un par de skills de mantenimiento). Para armar o hacer crecer el sistema desde acá, seguí el `CLAUDE.md` y la doctrina en `.secondbrain/reference.md` a mano.

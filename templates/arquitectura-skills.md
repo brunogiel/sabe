@@ -41,10 +41,10 @@ Un `SKILL.md` en una carpeta, con:
 
 Empezás con skills. Lo demás viene después, cuando una tarea ya no te necesita ahí.
 
-## Dónde viven
-Los skills que usás viven en **`skills/`** de tu SB, a la vista (los ves, los abrís, aprendés cómo están). Esa carpeta está respaldada por `.claude/skills/`, que es donde tu asistente **descubre y dispara** los skills por su frontmatter — es la misma carpeta: vos ves y editás `skills/`, el `.claude/` es la plomería. Si un skill no está ahí, su frase no lo despierta sola.
+## Dónde viven (y cómo se disparan)
+Los skills que usás viven en **`skills/`** de tu SB, a secas y a la vista (los ves, los abrís, aprendés cómo están). Lo que los dispara es **la tabla "Mis skills" de tu `CLAUDE.md`**: el asistente lee el `CLAUDE.md` al arrancar y, cuando decís una frase que matchea una fila (frase → skill), sigue ese `skills/<nombre>/SKILL.md`. Por eso andan **igual en Claude Code, Cowork y Codex** (los tres leen el `CLAUDE.md`; en Codex vía `AGENTS.md`), sin carpetas ocultas ni nada específico de un harness.
 
-Ahí caen dos cosas: los **skills de uso del kit** que vas adoptando (redactar, anti-slop, triage, auditar, crear-skill, abrir/cerrar-sesion) y los **que armás vos**. Los anotás en la tabla "Mis skills" de tu `CLAUDE.md` (ese mapa es para el humano; el disparo lo hace el frontmatter).
+Regla de oro: **un skill sin su fila en la tabla no existe para el asistente.** Cuando sumás uno (de uso del kit o propio), anotalo en "Mis skills" con su frase gatillo. El frontmatter del `SKILL.md` afina cómo y cuándo dispara; la fila es lo que lo pone en el radar.
 
 No van en `3. Recursos/`: ahí va material de referencia (como este mismo archivo), no las capacidades. Los skills son infraestructura del agente, por eso viven en `skills/`, no dentro de PARA.
 

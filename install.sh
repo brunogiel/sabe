@@ -8,9 +8,11 @@
 #
 # Topología (la regla, en 3 baldes):
 #   1. VISIBLE en tu SB: tu contexto (PARA, identidad, CLAUDE.md, ESTADO, Inbox) y
-#      los SKILLS QUE USÁS (en skills/). Estos NO se instalan todos de una: el coach
-#      te los va sumando a medida que avanzás (redactar, anti-slop, triage, auditar,
-#      crear-skill, abrir/cerrar-sesion). Los ves, los abrís, aprendés cómo están.
+#      los SKILLS QUE USÁS (en skills/, carpeta a secas). Estos NO se instalan todos de
+#      una: el coach te los va sumando a medida que avanzás (redactar, anti-slop, triage,
+#      auditar, crear-skill, abrir/cerrar-sesion). Los ves, los abrís, aprendés cómo están.
+#      Se disparan desde la tabla "Mis skills" de tu CLAUDE.md (por eso andan en Claude
+#      Code, Cowork y Codex por igual: los tres leen el CLAUDE.md, sin carpetas ocultas).
 #   2. OCULTO en tu SB (.secondbrain/): el proceso — la doctrina (reference.md), la
 #      plantilla de proyecto, y el CATÁLOGO de skills de uso (las versiones-fuente que
 #      el coach copia a skills/ cuando adoptás una). Más el control de versión.
@@ -129,12 +131,11 @@ done
 [ -f "${TMP}/motor/actualizar/check-update.sh" ] && cp "${TMP}/motor/actualizar/check-update.sh" "${SKILLS_DIR}/actualizar/check-update.sh"
 echo "  ✓ motor instalado (${#SKILLS_MOTOR[@]} skills global/invisible en ~/.claude/skills/)"
 
-# 6. Tus skills VISIBLES: carpeta skills/ (lo que ves) respaldada por .claude/skills/ (lo que
-#    el asistente escanea para dispararlos). Arranca vacía: el coach la va llenando.
-mkdir -p ".claude/skills"
-if [ ! -e "skills" ]; then
-  ln -s ".claude/skills" "skills" 2>/dev/null && echo "  ✓ carpeta visible skills/ (vacía; el coach te va sumando skills acá)" || true
-fi
+# 6. Tus skills VISIBLES: carpeta skills/ a secas (real, a la vista). Arranca vacía; el coach
+#    la va llenando. Se disparan desde la tabla "Mis skills" de tu CLAUDE.md — por eso andan
+#    igual en Claude Code, Cowork y Codex (los tres leen el CLAUDE.md), sin carpetas ocultas.
+mkdir -p "skills"
+echo "  ✓ carpeta visible skills/ (vacía; el coach te va sumando skills, ruteados por tu CLAUDE.md)"
 
 cat <<EOF
 

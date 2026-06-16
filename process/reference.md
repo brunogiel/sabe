@@ -127,7 +127,7 @@ No te asustes con la palabra. Tu primer script va a ser de tres líneas (mirá l
 
 El kit ya trae un skill funcionando, **`actualizar`** (vive en `~/.claude/skills/actualizar/`): chequea si SecondBrain tiene mejoras y, con tu OK, las baja. No hace falta que lo armes: **ábrilo para ver cómo es un skill por dentro** (el frontmatter con las frases que lo disparan, los pasos `[DET]`/`[LAT]`, su scriptito `check-update.sh`). Ese es tu ejemplo de referencia.
 
-Después armá **el tuyo**: algo que repitas de verdad (regla de 3). Va en `.claude/skills/<nombre>/SKILL.md` de tu carpeta. El skill `crear-skill` te guía.
+Después armá **el tuyo**: algo que repitas de verdad (regla de 3). Va en `skills/<nombre>/SKILL.md` (carpeta a la vista) + su fila en la tabla "Mis skills" del `CLAUDE.md` (esa fila es lo que lo dispara). El skill `crear-skill` te guía.
 
 Abajo, la anatomía del `actualizar` como modelo de lo que tiene que tener cualquier skill:
 
@@ -138,7 +138,7 @@ Abajo, la anatomía del `actualizar` como modelo de lo que tiene que tener cualq
 
 Fijate cómo el paso 1 y el 3 son mecánicos (script) y el 2 es criterio (el asistente decide cómo contártelo y espera tu OK). Eso es DET vs LAT en vivo.
 
-**El `SKILL.md` mínimo** (así viene `actualizar`; los tuyos van en `.claude/skills/<nombre>/SKILL.md`):
+**El `SKILL.md` mínimo** (así viene `actualizar`; los tuyos van en `skills/<nombre>/SKILL.md` + su fila en la tabla):
 
 ```
 ---
@@ -242,7 +242,7 @@ La regla, en **3 baldes** (así tu carpeta se ve limpia y sabés qué es qué):
 
 Vos solo ves lo que usás. El proceso y el motor trabajan de fondo.
 
-> **Por qué `skills/` y no a secas.** Tu asistente solo dispara un skill si su archivo está en `.claude/skills/` (ahí lee el frontmatter). `skills/` es la **misma carpeta a la vista** (respaldada por `.claude/skills/`): vos ves y editás `skills/`, el `.claude/` es la plomería que hace que se disparen. Y la tabla "Mis skills" de tu `CLAUDE.md` es el **mapa humano** (para que sepas qué tenés y con qué frase). Disparo (frontmatter) y mapa (tabla) conviven; no son lo mismo.
+> **Cómo se disparan (y por qué es portable).** Tus skills de uso viven en `skills/` a secas — carpeta normal, a la vista, sin nada oculto. Lo que los dispara es **la tabla "Mis skills" de tu `CLAUDE.md`**: tu asistente lee el `CLAUDE.md` al arrancar cada sesión y, cuando decís una frase que matchea una fila (frase → skill), va y sigue ese `skills/<nombre>/SKILL.md`. Por eso funcionan **igual en Claude Code, Cowork y Codex**: los tres leen el `CLAUDE.md` (en Codex, vía `AGENTS.md` que apunta ahí). No dependen de una carpeta `.claude/skills/` específica de Claude. La regla práctica: **un skill sin su fila en la tabla no existe para el asistente** — siempre anotalo.
 
 ---
 
