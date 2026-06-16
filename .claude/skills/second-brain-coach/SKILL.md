@@ -88,6 +88,10 @@ La checklist (tachá lo que ya cumple, guardala en `ESTADO.md`):
 
 El "nivel" de la escalera es un resumen de esta checklist, no un cajón. Lo usás para hablarle simple ("vas como por el Nivel 2"), pero por dentro pensás en ítems concretos.
 
+**Esta checklist es visible: vive en `ESCALERA.md` (raíz del SB), el tracker del usuario.** Vos lo MANTENÉS. Cada vez que cumple un ítem, tachalo ahí (`[ ]` → `[x]`), movés "Nivel actual" + la barra de progreso, y escribís el "Próximo paso" concreto. Es la versión gamificada y a la vista de esta checklist; el usuario lo abre para ver cuánto avanzó. (No confundir con `ESTADO.md`, que es el tablero fino que leés al arrancar.)
+
+**Disparos del tracker:** si el usuario dice *"¿cómo vengo?"*, *"mi progreso"*, *"la escalera"*, *"cuánto me falta"* → mostrale `ESCALERA.md` (dónde está, qué tachó, qué sigue) y ofrecé la próxima tarea. Si dice *"¿qué hacemos hoy?"* / *"hola coach"* → leé `ESCALERA.md` + `ESTADO.md`, briefealo corto y proponé la próxima tarea sin tachar.
+
 ## Reglas de oro (no las rompas)
 1. **Un escalón por vez con el que recién arranca.** No lo abrumes con una lista de 5: una. Con el que ya tiene varios ítems tachados, podés ofrecer armar varios de una. El default, con un desconocido, es de a uno.
 2. **Proponés, el usuario decide.** No crees ni edites ningún archivo sin un "dale" explícito.
@@ -135,12 +139,14 @@ Ofrecé/confirmá el **modo**. Guardá modo + cliente + la checklist en `ESTADO.
 **Bootstrap (casos a/b/c, con OK):**
 - Carpetas visibles: `0. Inbox/` (con su `INBOX.md`, el protocolo de captura) + PARA: `1. Proyectos/`, `2. Áreas/`, `3. Recursos/`, `4. Archivo/`. En `3. Recursos/` cae `arquitectura-skills.md` (la doctrina de skills, como Recurso visible).
 - Carpeta oculta `.secondbrain/` con `reference.md`, `plantilla-proyecto.md`, el catálogo `skills-disponibles/` (skills de uso dormidos) y `VERSION`/`CHANGELOG.md` (bajalos del repo si no están). Y la carpeta visible `skills/` (a secas), vacía al principio: ahí vas sumando los skills de uso, y se rutean desde la tabla "Mis skills" del `CLAUDE.md`.
-- `CLAUDE.md` raíz fino (router) + `ESTADO.md` + `AGENTS.md` (puntero para otros harnesses), los tres en la raíz. Los básicos de identidad en PARA, en `2. Áreas/yo/`: `sobre-mi`, `como-trabajo`, `mi-estilo`, `MEMORIA`. `soul` y `dev-prefs` NO van de entrada: los creás ahí cuando hagan falta.
+- `CLAUDE.md` raíz fino (router) + `ESTADO.md` + `ESCALERA.md` (el tracker de progreso) + `AGENTS.md` (puntero para otros harnesses), en la raíz. Los básicos de identidad en PARA, en `2. Áreas/yo/`: `sobre-mi`, `como-trabajo`, `mi-estilo`, `MEMORIA`. `soul` y `dev-prefs` NO van de entrada: los creás ahí cuando hagan falta.
 
 > Si el usuario no tiene claro qué proyectos/áreas va a tener, mostrale el layout de su perfil en `.secondbrain/ejemplos.md` (freelancer / dueño de pyme / PM / básico) como inspiración para arrancar — nunca como molde a copiar.
 
 ### Paso 1: Mirá el estado [DET]
-Leé `ESTADO.md` primero (es chico). Después tachá la checklist con chequeos livianos (existencia / `<...>` / conteo), sin abrir todo el contenido. Mirá también qué hay en su `skills/` (los skills de uso que ya adoptó del catálogo + los que armó él) y si hay rutinas en la sección "Rutinas" del root. El motor (vos/`actualizar`/`migrar`) no cuenta acá: vive aparte.
+Leé `ESTADO.md` y `ESCALERA.md` primero (son chicos). Después tachá la checklist con chequeos livianos (existencia / `<...>` / conteo), sin abrir todo el contenido. Mirá también qué hay en su `skills/` (los skills de uso que ya adoptó del catálogo + los que armó él) y si hay rutinas en la sección "Rutinas" del root. El motor (vos/`actualizar`/`migrar`) no cuenta acá: vive aparte.
+
+**Si es alguien que YA tiene un sistema armado (caso a, o un SB existente):** evaluá su nivel mirando lo que hay en la carpeta y lo que ya sabe hacer — no le hagas empezar de cero. Tachá en `ESCALERA.md` todo lo que ya cumple (identidad, proyectos, atajos, skills propios, rutinas) y ubicá "Nivel actual" donde realmente está. Mostrale el tracker ya cargado: "mirá, vas por acá, esto ya lo tenés".
 
 ### Paso 2: Ubicalo [LAT]
 Traducí la checklist a un nivel para hablarle simple:
@@ -179,7 +185,7 @@ Solo con el OK.
 Si recién armó el N0 (identidad), cerrá con la promesa concreta que engancha: *"La próxima vez que abras, va a arrancar sabiendo todo esto. Lo vas a notar en la segunda sesión."* Eso le da un momento de prueba, no una promesa abstracta.
 
 ### Paso 8: Dejá el ESTADO actualizado [DET]
-Si diagnosticaste o construiste algo, actualizá `ESTADO.md` (creálo si no existe): chico, con la checklist tachada + nivel + modo + cliente + proyectos activos + qué cambió hoy. La primera vez explicá en una línea para qué es.
+Si diagnosticaste o construiste algo, actualizá **los dos**: `ESTADO.md` (el tablero fino: modo + cliente + proyectos activos + qué cambió hoy + próximo paso) y `ESCALERA.md` (el tracker: tachá el ítem que cumplió, mové "Nivel actual" + la barra, escribí el próximo paso). Creálos si no existen. La primera vez explicá en una línea para qué es cada uno: el `ESTADO` es para no escanear todo al arrancar; la `ESCALERA` es para que vos veas cuánto avanzaste.
 
 Formato sugerido (corto):
 ```

@@ -28,7 +28,7 @@ BRANCH="main"
 RAW="https://raw.githubusercontent.com/${REPO}/${BRANCH}"
 
 # --- qué se baja ---
-ROOT_FILES=("CLAUDE.md" "ESTADO.md" "AGENTS.md")          # raíz, visibles
+ROOT_FILES=("CLAUDE.md" "ESTADO.md" "ESCALERA.md" "AGENTS.md")   # raíz, visibles
 YO_DIR="2. Áreas/yo"
 YO_FILES=("sobre-mi.md" "como-trabajo.md" "mi-estilo.md" "MEMORIA.md")
 # El MOTOR de armado: global e invisible. Solo el coach + mantenimiento.
@@ -142,7 +142,7 @@ echo "  ✓ carpeta visible skills/ (vacía; el coach te va sumando skills, rute
 cat <<EOF
 
 ✅  Listo. Se armó tu SecondBrain:
-   • 5 carpetas (0. Inbox + PARA)  • CLAUDE.md + ESTADO.md + AGENTS.md  • tu identidad
+   • 5 carpetas (0. Inbox + PARA)  • CLAUDE.md + ESTADO.md + ESCALERA.md + AGENTS.md  • tu identidad
    • el motor (${#SKILLS_MOTOR[@]} skills) global e invisible  • skills/ vacía, lista para que el coach la llene
 
 Cómo queda, en una línea:
