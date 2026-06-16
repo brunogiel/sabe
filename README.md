@@ -20,7 +20,7 @@ Most people never write those files. This gives you the seed and a coach that wa
 curl -fsSL https://raw.githubusercontent.com/brunogiel/secondbrain-claude/main/install.sh | bash
 ```
 
-This creates your PARA folders, the essentials (your `CLAUDE.md` router and `ESTADO.md` at the root, your identity basics under `2. Áreas/yo/`), a hidden `.secondbrain/` for the machinery, and installs the skills into `.claude/skills/` in the folder (hidden, travels with your sync). The rest grows as you climb. Your folder stays clean: you only see your own stuff.
+This creates your PARA folders, the essentials (your `CLAUDE.md` router and `ESTADO.md` at the root, your identity basics under `2. Áreas/yo/`), a hidden `.secondbrain/` for the machinery, and installs the kit skills globally (the engine, so the coach works everywhere). The skills you build later live in your folder and travel with it. The rest grows as you climb. Your folder stays clean: you only see your own stuff.
 
 Not on the terminal (e.g. Cowork desktop)? Download the zip or `git clone`, or just open Claude in the folder and say *"set up my system"*.
 
@@ -41,9 +41,9 @@ You don't build the whole system on day one. You climb. The coach teaches you th
 
 Beginner or advanced? The coach adapts: one rung at a time with full teaching for newcomers, or a fast multi-rung setup plus an advanced track for power users. Ask **`/second-brain-coach`** anytime: it tells you where you are and proposes the next step. It proposes, you decide.
 
-## Cowork first, migrate to Code
+## Works in Cowork, Code, or anything else (model and harness agnostic)
 
-Your whole system lives in one synced folder, so it's the same brain wherever you open it. Start in **Cowork** (no terminal needed). When you grow into code, just open the same folder in **Claude Code**: there's no migration, the brain is already there.
+Your whole system is just plain text in one synced folder, so it's the same brain wherever you open it. Start in **Cowork** (no terminal needed); grow into **Claude Code** by opening the same folder, no migration needed. And it isn't tied to Claude: the same folder works with **Codex, Cursor, or whatever comes next**. The harness is just the hands; the brain is yours and portable, agnostic to the model and the tool.
 
 ## What's inside
 

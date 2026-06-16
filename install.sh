@@ -12,7 +12,9 @@
 #      identity basics inside PARA, under "2. Áreas/yo/" (sobre-mi, como-trabajo,
 #      mi-estilo, MEMORIA). The rest (soul, dev-prefs) the coach adds as you climb.
 #   3. Sets up the hidden .secondbrain/ folder (the process: doctrine + version).
-#   4. Installs the skills into .claude/skills/ IN THIS FOLDER (hidden, travels with sync).
+#   4. Installs the KIT skills globally in ~/.claude/skills/ (the engine, so the coach works
+#      everywhere). The skills YOU build later live in .claude/skills/ of your SB folder and
+#      travel with it.
 # After install, open Claude Code (or Cowork) here and type:  /second-brain-coach
 set -euo pipefail
 
@@ -25,9 +27,10 @@ ROOT_FILES=("CLAUDE.md" "ESTADO.md")
 # Identity basics (non-negotiable), in PARA under 2. Áreas/yo/.
 YO_DIR="2. Áreas/yo"
 YO_FILES=("sobre-mi.md" "como-trabajo.md" "mi-estilo.md" "MEMORIA.md")
-# Skills: the coach is the entry point. Live in the folder (hidden, travel with sync).
+# Kit skills = the engine the coach needs to work. Global, reinstalled with the kit on each
+# machine. The skills YOU build later live in .claude/skills/ of your SB folder and travel with it.
 SKILLS=("second-brain-coach" "redactar" "anti-slop" "crear-skill" "auditar-sistema" "triage-mails" "migrar-de-claude-projects")
-SKILLS_DIR=".claude/skills"
+SKILLS_DIR="${HOME}/.claude/skills"
 SB_DIR=".secondbrain"
 
 echo ""
@@ -68,7 +71,8 @@ curl -fsSL "${RAW}/VERSION"              -o "${SB_DIR}/VERSION"
 curl -fsSL "${RAW}/CHANGELOG.md"         -o "${SB_DIR}/CHANGELOG.md"
 echo "  ✓ proceso oculto en ${SB_DIR}/"
 
-# 5. Skills in this folder (.claude/skills/): hidden, travel with the synced folder.
+# 5. Kit skills, global (~/.claude/skills/): the engine. Tus propios skills (los que armás
+#    después) viven en .claude/skills/ de esta carpeta y viajan con tu SB.
 mkdir -p "$SKILLS_DIR"
 for s in "${SKILLS[@]}"; do
   mkdir -p "${SKILLS_DIR}/${s}"

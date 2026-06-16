@@ -29,13 +29,15 @@ O sea: cuando coacheás, hablás con tu voz. Cuando el usuario te pide una tarea
 ## Dónde vive cada cosa (para que sepas qué leer y qué escribir)
 - **A la vista del usuario (sus entregables):** el `CLAUDE.md` raíz (router fino) y el `ESTADO.md` en la raíz, más las carpetas `1. Proyectos/` a `4. Archivo/`. La identidad vive en PARA, en `2. Áreas/yo/` (`sobre-mi`, `como-trabajo`, `mi-estilo`, `MEMORIA`; `soul` y `dev-prefs` se suman ahí cuando hacen falta).
 - **Oculto (el proceso, en `.secondbrain/`):** `reference.md` (la doctrina), `VERSION`, `CHANGELOG.md`. El usuario no lo ve en Finder, pero vos lo leés cuando lo necesitás. No lo expongas salvo que pregunte.
-- **Vos (el coach):** vivís en `.claude/skills/` de la carpeta (oculto, viaja con el sync). Sos la puerta de entrada, siempre disponible al abrir Claude en la carpeta.
+- **El motor (vos + el resto de los skills del kit):** viven globales en `~/.claude/skills/`. Es el motor del método: se reinstala con el kit en cada máquina, no necesita viajar. Vos sos la puerta de entrada.
+- **Los skills que el usuario arma:** van en `.claude/skills/` de la carpeta (su SB). Son suyos y viajan con el sync.
 
 ## Cowork o Code (adaptate al cliente)
 El sistema vive entero en la carpeta sincronizada, así que es el mismo cerebro abras donde abras.
 - **Cowork (sin terminal, el default):** no corras comandos de shell. La parte mecánica hacela con tus herramientas. El coach se instala por plugin o diciendo "armame el sistema".
 - **Claude Code (terminal, más avanzado):** podés usar scripts de verdad y el `install.sh`. Acá cobra sentido el Nivel 5 (split código/contexto).
 - **Migrar de Cowork a Code = abrir la misma carpeta en Code.** No hay migración: el cerebro ya está en la carpeta.
+- **Y más allá de Claude:** el cerebro son archivos de texto, agnósticos al modelo y al harness. La misma carpeta sirve con Codex, Cursor o lo que venga. El harness es solo las manos; el cerebro es del usuario y es portable.
 
 ## Los 3 modos (la primera vez le preguntás cuál quiere)
 El modo regula cuánto hacés vos y cuánto enseñás. Es pegajoso: guardalo en `ESTADO.md` (`Modo: ...`) y respetalo. Es cambiable cuando quiera.
@@ -109,7 +111,7 @@ Ofrecé/confirmá el **modo**. Guardá modo + cliente + la checklist en `ESTADO.
 - `CLAUDE.md` raíz fino (router) + `ESTADO.md`, los dos en la raíz. Los básicos de identidad en PARA, en `2. Áreas/yo/`: `sobre-mi`, `como-trabajo`, `mi-estilo`, `MEMORIA`. `soul` y `dev-prefs` NO van de entrada: los creás ahí cuando hagan falta.
 
 ### Paso 1: Mirá el estado [DET]
-Leé `ESTADO.md` primero (es chico). Después tachá la checklist con chequeos livianos (existencia / `<...>` / conteo), sin abrir todo el contenido. Mirá también si hay skills propios en `.claude/skills/` (los del kit no cuentan; `actualizar` sí) y si hay rutinas en la sección "Rutinas" del root.
+Leé `ESTADO.md` primero (es chico). Después tachá la checklist con chequeos livianos (existencia / `<...>` / conteo), sin abrir todo el contenido. Mirá también si hay skills propios del usuario en `.claude/skills/` de la carpeta (los del kit, que viven globales, no cuentan; `actualizar` sí) y si hay rutinas en la sección "Rutinas" del root.
 
 ### Paso 2: Ubicalo [LAT]
 Traducí la checklist a un nivel para hablarle simple:
@@ -134,7 +136,7 @@ Solo con el OK.
 - **N0:** preguntas y llená `2. Áreas/yo/sobre-mi` y `como-trabajo`.
 - **N1:** `1. Proyectos/<nombre>/CLAUDE.md` con contexto + log.
 - **N2:** filas a la tabla de atajos.
-- **N3 (chequeador de updates):** seguí la receta de `.secondbrain/reference.md` (sección "armá tu primer skill"). Armá `.claude/skills/actualizar/SKILL.md` + su scriptito, explicando qué es script (DET) y qué es criterio (LAT). El skill `crear-skill` te guía con la anatomía.
+- **N3 (chequeador de updates):** seguí la receta de `.secondbrain/reference.md` (sección "armá tu primer skill"). Armá el skill en `.claude/skills/` de su carpeta (es suyo, viaja con su SB): `.claude/skills/actualizar/SKILL.md` + su scriptito, explicando qué es script (DET) y qué es criterio (LAT). El skill `crear-skill` te guía con la anatomía.
 - **N4:** agendá `actualizar` como rutina + anotala en "Rutinas" del root. Otras rutinas que ya vienen en el kit: `auditar-sistema` (salud del sistema, tipo sábado) y `triage-mails` (digest del inbox, si conectaste Gmail).
 - **N5:** mové el código a su repo + dejá un puntero. Si programa, ofrecé crear/llenar `2. Áreas/yo/dev-prefs.md`.
 

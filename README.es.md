@@ -18,7 +18,7 @@ Casi nadie escribe esos archivos. Esto te da la semilla y un coach que te lleva 
 curl -fsSL https://raw.githubusercontent.com/brunogiel/secondbrain-claude/main/install.sh | bash
 ```
 
-Te crea las carpetas PARA, lo esencial (tu router `CLAUDE.md` y el `ESTADO.md` en la raíz, tus básicos de identidad en `2. Áreas/yo/`), una carpeta oculta `.secondbrain/` para la maquinaria, e instala los skills en `.claude/skills/` de la carpeta (ocultos, viajan con tu sync). El resto crece a medida que subís. Tu carpeta queda limpia: ves solo lo tuyo.
+Te crea las carpetas PARA, lo esencial (tu router `CLAUDE.md` y el `ESTADO.md` en la raíz, tus básicos de identidad en `2. Áreas/yo/`), una carpeta oculta `.secondbrain/` para la maquinaria, e instala los skills del kit globales (el motor, para que el coach funcione en todos lados). Los skills que armás después viven en tu carpeta y viajan con ella. El resto crece a medida que subís. Tu carpeta queda limpia: ves solo lo tuyo.
 
 ¿No estás en la terminal (ej. Cowork desktop)? Bajá el zip o hacé `git clone`, o abrí Claude en la carpeta y decile *"armame el sistema"*.
 
@@ -39,9 +39,9 @@ No armás todo el día uno. Subís. El coach te enseña la idea de cada escalón
 
 ¿En bolas o avanzado? El coach se adapta: de a un escalón con todo explicado si arrancás, o un setup rápido de varios escalones más un track avanzado si ya la tenés clara. Pedile **`/second-brain-coach`** cuando quieras: te ubica y te propone el próximo paso. Propone, vos decidís.
 
-## Cowork primero, migrá a Code
+## Cowork, Code o lo que sea (agnóstico al modelo y al harness)
 
-Tu sistema entero vive en una carpeta sincronizada, así que es el mismo cerebro abras donde abras. Arrancá en **Cowork** (sin terminal). Cuando crezcas al código, abrí la misma carpeta en **Claude Code**: no hay migración, el cerebro ya está ahí.
+Tu sistema entero son archivos de texto en una carpeta sincronizada, así que es el mismo cerebro abras donde abras. Arrancá en **Cowork** (sin terminal); crecé a **Claude Code** abriendo la misma carpeta, sin migración. Y no está atado a Claude: la misma carpeta sirve con **Codex, Cursor o lo que venga**. El harness es solo las manos; el cerebro es tuyo y portable, agnóstico al modelo y a la herramienta.
 
 ## Qué trae adentro
 
