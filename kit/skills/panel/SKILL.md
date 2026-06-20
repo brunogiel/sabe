@@ -5,8 +5,9 @@ description: >
   Trae un panel de reviewers con lentes distintas para que VEAS mejor algo que estás
   haciendo (un PRD, un mail, un documento, copy, una landing, un deck, una propuesta)
   antes de mandarlo o publicarlo. Spawnea 2-5 subagentes, cada uno revisando el MISMO
-  artefacto desde un ángulo distinto, y al final te devuelve la pelota (¿qué cambiás vos?),
-  nunca te dicta qué hacer. Usalo cuando digas "paneá esto", "pasalo por el panel",
+  artefacto desde un ángulo distinto, te muestra el mapa de ángulos neutro, después te baja una
+  lectura accionable (propuesta + oportunidades + pasos) y al final te devuelve la pelota
+  (¿qué cambiás vos?), nunca te dicta qué hacer. Usalo cuando digas "paneá esto", "pasalo por el panel",
   "traeme reviewers", "miralo desde distintas perspectivas", "revisá esto desde varios
   ángulos", "qué le falta a este PRD/mail/doc", "ojos frescos sobre esto", "red team esto",
   "buscale los agujeros", "cómo cae esto", "qué piensa el que lo recibe". NO lo uses para
@@ -20,7 +21,7 @@ Mirás un mail, un PRD, una propuesta, lo que sea, lo suficiente como para perde
 
 Panel trae varios a la vez. 2-5 reviewers, cada uno con una lente distinta (el que lo recibe, el adversario, el que no tiene contexto, el editor, el de riesgo), todos mirando el MISMO artefacto. Te devuelven qué ven desde su ángulo, te marca dónde coinciden y dónde se contradicen (la contradicción es señal), y al final te devuelve la pelota: vos decidís qué cambiás.
 
-Panel es para VER, no para decidir. Te muestra lo que no estabas viendo y te deja decidir. Si lo que tenés es un texto con olor a IA para limpiar, eso es `anti-slop`. Si lo que tenés es algo hecho que querés mirar mejor antes de soltarlo, esto.
+Panel es para VER, no para decidir. Te muestra lo que no estabas viendo, te baja una lectura para arrancar (sugerencia, no veredicto) y te deja decidir. Si lo que tenés es un texto con olor a IA para limpiar, eso es `anti-slop`. Si lo que tenés es algo hecho que querés mirar mejor antes de soltarlo, esto.
 
 Es el ejemplo de orquestador **multi-agente** del Nivel 5: no hace el trabajo, reparte el mismo artefacto a varios subagentes en paralelo y junta los ángulos.
 
@@ -29,7 +30,7 @@ Es el ejemplo de orquestador **multi-agente** del Nivel 5: no hace el trabajo, r
 Orquestador (`kind: orchestrator`). El trabajo de pensar lo hacen los reviewers; el skill coordina:
 1. **Fino:** el hilo principal identifica el artefacto, elige las lentes, dispara los subagentes y arma el mapa. El análisis vive adentro de cada reviewer.
 2. **Evalúa a los workers:** antes de presentar, chequea que cada reviewer haya citado el artefacto y sea específico (no genérico). El que volvió vago se descarta o se vuelve a tirar (paso 3).
-3. **Loguea la corrida:** cada panel cierra con un JSON estructurado (paso 6).
+3. **Loguea la corrida:** cada panel cierra con un JSON estructurado (paso 7).
 
 ## Cuándo vale la pena
 
@@ -48,7 +49,7 @@ Orquestador (`kind: orchestrator`). El trabajo de pensar lo hacen los reviewers;
 
 El default es **deliberado**: antes de spawnear nada, te muestra a quién va a traer y por qué, y espera tu OK. Pero si lo pedís directo, saltea eso.
 
-**Modo directo** se activa si decís algo tipo: "mandate subagentes", "tirá directo", "sin preguntar", "dale directo", "spawneá nomás". Ahí saltea la propuesta, anuncia el panel en una línea y spawnea. Los dos modos terminan igual: devolviéndote la pelota (paso 5).
+**Modo directo** se activa si decís algo tipo: "mandate subagentes", "tirá directo", "sin preguntar", "dale directo", "spawneá nomás". Ahí saltea la propuesta, anuncia el panel en una línea y spawnea. Los dos modos terminan igual: con la bajada (paso 5) y devolviéndote la pelota (paso 6).
 
 ## Catálogo de lentes (el menú)
 
@@ -86,15 +87,23 @@ Chequear cada retorno contra dos criterios de descarte: **(a)** no cita el artef
 
 ### Paso 4: presentar el mapa de ángulos [LAT]
 NO es un veredicto, es un mapa. Un bloque por reviewer (nombre de la lente + su lectura apretada, con las citas que trajo). Al final, dos líneas: **dónde coinciden** y **dónde se contradicen**.
-**Guardrail de neutralidad** (lo que hace que Panel no decida):
+**Guardrail de neutralidad — aplica al MAPA, no a la bajada** (lo que separa a Panel de un skill que decide). El mapa es foto cruda de lo que vieron los reviewers; la opinión sintetizada va recién en la bajada (paso 5):
 - Las coincidencias se reportan como cuenta cruda ("lo marcaron N de M lentes"), NO como peso ni como "esto hay que cambiarlo". Que tres coincidan es un dato, no un veredicto.
-- Prohibido el lenguaje de recomendación: nada de "te recomiendo", "lo principal a cambiar es", "deberías". Sintetizar hacia una acción es el trabajo del usuario en el paso 5, no del skill.
+- En el mapa, prohibido el lenguaje de recomendación: nada de "te recomiendo", "lo principal a cambiar es", "deberías". Si te sale sintetizar hacia una acción acá, frená: eso va en la bajada (paso 5), no en el mapa.
 
-### Paso 5: devolver la pelota [DET] (SIEMPRE, los dos modos)
-Cerrar toda corrida devolviéndole la decisión al usuario. La firma del skill:
-> **Ahora vos:** ¿qué de todo esto te resuena? ¿Qué vas a cambiar y qué vas a dejar igual aunque un reviewer lo marque?
+### Paso 5: la bajada [LAT] (SIEMPRE, los dos modos)
+Después del mapa neutro, y separado con `---`, bajá la lectura accionable. Acá SÍ podés sintetizar y opinar (es lo único que se sale del guardrail de neutralidad, y va a propósito en su propio bloque para no contaminar el mapa). Encabezá el bloque dejando claro qué es: una lectura para arrancar, no un veredicto, tomala o tirala. Tres partes cortas:
+- **Propuesta** (1-3 líneas): qué haría con esto si fuera tuyo, leyendo el mapa entero. La síntesis, no un resumen del mapa.
+- **Oportunidades** (2-4 bullets): qué se ABRE, no solo qué arreglar. Ángulos para aprovechar, lo que más de una lente dejó picando como upside.
+- **Pasos sugeridos** (2-4 bullets accionables): el next move concreto. Qué tocar primero, en qué orden, qué chequear antes de soltarlo. Verbos, no vibes.
 
-### Paso 6: loguear la corrida [DET]
+Reglas: apoyate en lo que trajeron los reviewers (citá la lente: "el Destinatario y el de Riesgo coinciden en X → propondría Y"), no metas opinión que no salió del panel. Es sugerencia, no orden ("yo haría / yo arrancaría por", no "tenés que / hacé esto"). Si el panel volvió flojo o muy dividido, decilo en vez de inventar una propuesta firme: "el panel quedó partido entre A y B, no hay bajada limpia; depende de cuánto pese para vos [tradeoff]".
+
+### Paso 6: devolver la pelota [DET] (SIEMPRE, los dos modos)
+Cerrar toda corrida devolviéndole la decisión al usuario. La bajada propone; este paso confirma que la decisión es suya. La firma del skill:
+> **Ahora vos:** la bajada es una lectura, no una orden. ¿Qué te resuena? ¿Qué vas a cambiar y qué vas a dejar igual aunque un reviewer lo marque?
+
+### Paso 7: loguear la corrida [DET]
 Append a `skills/panel/runs/YYYY-MM-DD.json` (crear `runs/` si falta). Schema:
 ```json
 {
@@ -106,7 +115,12 @@ Append a `skills/panel/runs/YYYY-MM-DD.json` (crear `runs/` si falta). Schema:
   "lentes": [{"lente": "El Destinatario", "modelo": "sonnet"}, "..."],
   "descartados": ["Lente X: razón", "..."],
   "coincidencia_clave": "lo que más de una lente marcó (con la cuenta N de M)",
-  "contradiccion_clave": "donde se cruzaron, si pasó"
+  "contradiccion_clave": "donde se cruzaron, si pasó",
+  "bajada": {
+    "propuesta": "la síntesis en una línea",
+    "oportunidades": ["...", "..."],
+    "pasos_sugeridos": ["...", "..."]
+  }
 }
 ```
 
@@ -156,9 +170,10 @@ EL CAMBIO:
 - [ ] En modo deliberado hubo OK explícito antes de spawnear; en modo directo se anunció el panel igual.
 - [ ] Los reviewers corrieron en paralelo (un mensaje, N Agent calls), no en secuencia.
 - [ ] Cada reviewer citó el artefacto; los vagos se re-tiraron una vez y se descartaron si volvieron vagos. Si quedaron <2 válidos, se frenó y se avisó.
-- [ ] La presentación es un MAPA: coincidencias como cuenta ("N de M lentes"), contradicciones explícitas, cero lenguaje de recomendación.
-- [ ] La corrida cerró devolviendo la pelota (paso 5), no dictando qué hacer.
-- [ ] `skills/panel/runs/YYYY-MM-DD.json` tiene la corrida logueada con el schema completo.
+- [ ] El MAPA quedó neutro: coincidencias como cuenta ("N de M lentes"), contradicciones explícitas, cero lenguaje de recomendación dentro del mapa.
+- [ ] Después del mapa (separado con `---`) hubo una bajada accionable con sus tres partes (propuesta + oportunidades + pasos), apoyada en lo que trajeron los reviewers y marcada como lectura para arrancar, no veredicto.
+- [ ] La corrida cerró devolviendo la pelota (paso 6), no dictando qué hacer.
+- [ ] `skills/panel/runs/YYYY-MM-DD.json` tiene la corrida logueada con el schema completo (incluida la bajada).
 
 ## Notas
 - **Spawnear siempre en paralelo.** Secuencial desperdicia tiempo y deja que un reviewer contamine al siguiente.

@@ -19,6 +19,7 @@ Se arma por bloques, de la base para arriba: no empezás por el copy si todavía
 
 ## Cómo corre
 - **Una etapa a la vez.** Construís la etapa, la mostrás, esperás un "dale", recién ahí seguís. Nunca las 5 de una.
+- **Bloqueo duro entre etapas.** Aunque haya contexto suficiente para imaginar Historia, Estructura o Copy, NO avances ni scaffoldees la etapa siguiente hasta tener OK explícito sobre la actual. Si el usuario trae material que pertenece a una etapa futura, capturalo como insumo o `[PENDIENTE PARA ETAPA N]`, pero no lo resuelvas todavía.
 - **El usuario lidera lo creativo.** El skill ejecuta, propone y arma; el ángulo, la historia, el copy y el tono los cierra el usuario. Frasealo "armé esto, ¿te cierra?", no decidas solo.
 - **UN solo doc que crece.** Cada etapa appendea una sección H2 al mismo markdown (`{BASE}/{SLUG}/pieza.md`), no un archivo por etapa. Arriba el brief, abajo lo último.
 - **Profundidad por etapa.** Cada etapa corre en **skip / liviano / full**. Al arrancar proponés un perfil según medio + tamaño; el usuario lo ajusta antes de construir.
@@ -62,25 +63,36 @@ Reunir parámetros, proponer el perfil de profundidad, esperar OK. Crear `{BASE}
 - **Límites:** no-negociables (marca, legal, tono, qué NO decir).
 - *liviano* = bullets. *full* = + research del canal si hace falta (proponer antes). Checkpoint.
 
+Regla de salida: la Etapa 1 termina con un checkpoint y una pregunta de confirmación. NO metas todavía índice de slides, copy, prompts de asset ni estructura tentativa, salvo como `Notas para etapa futura`.
+
 **Etapa 2 · Historia** `[LAT]` → appendea `## 2. Historia`
+Un mini-storyboard: el input de Estructura, no una narrativa literaria. Cada bloque es una línea, no un párrafo.
 - **Mensaje central** en UNA frase. Si no entra en una frase, son dos mensajes; elegí uno.
 - **Por qué importa** a esta audiencia (el stake, la tensión). Sin esto la pieza informa pero no mueve.
-- **Hilo conductor:** la forma que hilvana el mensaje (antes/después, problema→giro→solución, una anécdota que ancla). *full* = + mapeo del hilo contra la estructura.
+- **Bloques en orden:** la lista de temas/momentos en secuencia, cada uno con (a) qué querés que la audiencia sienta o entienda y (b) qué decís para lograrlo. Sin desarrollar el copy todavía, solo la intención. Esta lista es la que después se expande en slides/beats/tarjetas.
 - Lo que falte (un dato, un caso real) va como `[ABIERTO: ...]`, nunca inventado. Checkpoint.
 
+*liviano* = mensaje central + por qué importa + bloques en bullets cortos. *full* = + el hilo conductor (la forma que hilvana todo: antes/después, problema→giro→solución, una anécdota que ancla) y 2 alternativas de orden para elegir cuál fluye mejor.
+
 **Etapa 3 · Estructura** `[LAT]` → appendea `## 3. Estructura`
-- **ppt/deck:** lista de slides por título, 1 idea por slide, arco apertura → tensión → resolución → cierre/CTA. **Definir la cantidad de slides.**
+- **ppt/deck:** lista de slides por título, 1 idea por slide, arco apertura → tensión → resolución → cierre/CTA. **La cantidad de slides emerge del storyboard de Historia:** expandí cada bloque en tantas slides como ideas tenga, sin comprimir ni inflar. Proponé el número que sale y ajustalo con el usuario si no se siente bien.
 - **post:** hook / cuerpo / CTA (marcar dónde corta el "ver más"). **video:** beats con duración tentativa. **carrusel:** tarjetas numeradas. **landing:** hero (promesa + CTA) → problema → solución → prueba → cierre/CTA.
 - Respeta los límites del brief. *liviano* = el molde en bullets. *full* = + 1 frase de qué entra en cada slide/beat/tarjeta. Checkpoint.
 
 **Etapa 4 · Copy** `[LAT]` → appendea `## 4. Copy`
-- **Llenar el molde:** ppt = por slide, título + bullets/idea + nota de presenter; post = el texto completo; video = guion por beat; carrusel = texto por tarjeta; landing = headline + subhead + body + CTAs por sección.
-- **Pulir:** pasá por `redactar` (la voz del usuario) + `anti-slop` (una pasada: sacar reframes "no es X es Y", puffery, verbos metafóricos, vocab muerto). **0 em-dashes.** Cada palabra paga renta.
-- Datos/casos que no existan → `[ABIERTO: ...]`, no inventar. *liviano* = draft directo pulido. *full* = + 2-3 variantes de apertura/hook. Checkpoint (el usuario valida que suene a él).
+El texto real, llenando la estructura. Corre en tres sub-pasos, los tres obligatorios:
+
+**4a. Draft:** llená el molde con el texto. ppt = por slide, título + bullets/idea + nota de presenter; post = el texto completo; video = guion por beat; carrusel = texto por tarjeta; landing = headline + subhead + body + CTAs por sección. Datos/casos que no existan → `[ABIERTO: ...]`, no inventar. *full* = + 2-3 variantes de apertura/hook.
+
+**4b. Voz** `[DET]`: pasá el draft por `redactar` para que suene a la voz del usuario. Bajá la informalidad si la pieza va a terceros (cliente, audiencia externa). No anuncies que "estás aplicando el estilo", solo hacelo y mostrá el resultado.
+
+**4c. Anti-slop** `[DET]`: pasá una vez por `anti-slop` (sacar reframes "no es X es Y", verbos metafóricos, puffery, vocab muerto, **0 em-dashes**). Cada palabra paga renta. Mostrá el resultado final, no el diff.
+
+Checkpoint al cerrar 4c: el usuario valida que suene a él antes del asset. Antes de cerrar, consolidá todos los `[imagen: ...]` del copy en `assets/imagenes-pendientes.md` (una fila por imagen: slide/contexto + descripción + estado). El usuario sourcea las imágenes aparte con esa lista.
 
 **Etapa 5 · Asset final** `[LAT]`/`[DET]` → appendea `## 5. Asset final` + punteros a `assets/`
 El entregable listo, 0 placeholders:
-- **ppt/deck:** ofrecé ambos caminos y que el usuario elija — un prompt para **Gamma** (`assets/gamma-prompt.md`) O el `.pptx` vía el **skill de pptx** que tenga conectado (`assets/{SLUG}.pptx`).
+- **ppt/deck:** ofrecé los caminos y que el usuario elija. Si tiene un skill de pptx conectado → `assets/{SLUG}.pptx`. Para **Gamma**, ojo: Gamma no importa `.md` ni archivos de texto, solo acepta paste directo o `.docx`. Así que o (a) le pasás el copy pulido para pegar en Gamma → New → Generate, o (b) generás `assets/{SLUG}.docx` (H1 = título de slide, párrafo = cuerpo) y lo subís por Gamma → Import. (a) es el default por velocidad.
 - **post:** texto final listo para pegar, con saltos de línea reales. **video:** guion + shotlist + prompt(s). **carrusel:** texto + prompt de imagen por tarjeta. **landing:** prompt para el builder o el HTML, según dónde va a vivir.
 - Varios medios → repetir Asset por medio (misma Historia, distinto asset). Checkpoint final → pieza terminada.
 
@@ -110,3 +122,4 @@ El entregable listo, 0 placeholders:
 - **"Hacelo todo de una":** igual presentá checkpoints por etapa; ofrecé correr seguido pero sin saltear Historia ni Estructura (ahí se define si la pieza para de pie).
 - **Tentación de un archivo por etapa:** NO. Un solo `pieza.md` que crece. Si quedó largo, podá prosa vieja, no partas el doc.
 - **Falta `MEDIO`:** bloquea Estructura/Copy/Asset (cambian de forma por medio). Default ppt, pero confirmalo al arrancar.
+- **Querer subcarpetas de contexto:** proponéselo al usuario antes; no crees `contexto/` por las dudas.

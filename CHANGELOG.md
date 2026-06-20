@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.13.3
+- **Dos skills de uso actualizados desde sus versiones en uso real (no se toca ni el motor ni el brain).**
+  - **`ppt-builder`:** se portaron las mejoras del orquestador de comunicación en uso. Nuevo: **bloqueo duro entre etapas** (no scaffoldear la siguiente aunque sobre contexto; material futuro → `[PENDIENTE]`), **regla de salida de la Etapa 1** (no adelantar índice/copy/estructura), **Copy partido en 3 sub-pasos** (draft → voz vía `redactar` → limpieza vía `anti-slop`) más consolidar las imágenes pendientes, las **slides emergen del storyboard** de Historia, y la Etapa 2 (Historia) fusiona "por qué importa (el stake)" con el storyboard de bloques. Fix: el camino de **Gamma** ahora aclara que no importa `.md` ni texto (solo paste o `.docx`); antes sugería un `.md` que no se puede subir.
+  - **`panel`:** se sumó la **bajada** (paso nuevo). Después del mapa de ángulos neutro, Panel baja una lectura accionable (propuesta + oportunidades + pasos sugeridos), marcada como sugerencia y no veredicto, y recién ahí devuelve la pelota. El guardrail de neutralidad ahora aplica explícitamente al MAPA y no a la bajada; el schema del log suma el campo `bajada`. Panel sigue sin decidir: sugiere y devuelve la pelota.
+- Tocados: `kit/skills/ppt-builder/SKILL.md`, `kit/skills/panel/SKILL.md`, `VERSION`, `CHANGELOG.md`.
+
 ## 2.13.2
 - **Menú del plugin = solo el coach (Cowork más limpio).** Antes el plugin mostraba 3 ítems (`second-brain-coach`, `actualizar`, `migrar-de-claude-projects`); para un usuario nuevo, los otros dos son ruido. Ahora el motor ACTIVO es **un solo skill, el coach**:
   - **`migrar` se metió adentro del coach:** dejó de ser un skill suelto y pasó a ser un doc del coach (`migracion.md`) que el coach sigue cuando traés tus Projects de Claude. El menú no lo muestra; el coach lo hace cuando se lo pedís.
