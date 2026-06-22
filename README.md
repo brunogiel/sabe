@@ -6,7 +6,7 @@ It is not a second brain for you to read. It is a folder your assistant can oper
 
 You install one coach. The coach helps you build the rest one step at a time. It works with **Cowork** and **Claude Code**. **Codex** and other agents can use the same folder through `AGENTS.md`.
 
-> Method content is in Spanish (rioplatense). Spanish version: [README.es.md](README.es.md).
+> Method content is in Spanish. Spanish version: [README.es.md](README.es.md).
 
 ---
 
