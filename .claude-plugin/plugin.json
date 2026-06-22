@@ -1,6 +1,6 @@
 {
   "name": "personal-agentic-os",
-  "description": "Claude arranca cada sesion adivinando quien sos. Esto lo corta: un coach que arma tu segundo cerebro (unos archivos de texto plano que Claude lee al iniciar) y lo hace crecer de a un escalon. Para Claude Code o Cowork. En Cowork se instala sin terminal.",
+  "description": "Claude arranca cada sesion adivinando quien sos. Esto lo corta: tu personal agentic OS, una carpeta de texto plano que tu asistente opera. Un coach te lo arma de a un escalon. Para Claude Code o Cowork. En Cowork se instala sin terminal.",
   "version": "2.15.0",
   "author": {
     "name": "Bruno Gielczynsky",

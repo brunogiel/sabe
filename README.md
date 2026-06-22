@@ -1,8 +1,8 @@
 # Personal Agentic OS
 
-Claude starts every session without knowing who you are, how you work, or where the important stuff lives. Personal Agentic OS gives it a plain-text folder to read at startup, so it stops guessing.
+Claude starts every session without knowing who you are, how you work, or where the important stuff lives. Personal Agentic OS is a plain-text folder it reads at startup, so it stops guessing.
 
-It is not a second brain for you to read. It is a folder your assistant can operate from.
+It is not a second brain for *you* to read. It is a personal operating system your assistant works from: your context, projects, skills, and routines as plain files, so the agent knows what to load and when.
 
 You install one coach. The coach helps you build the rest one step at a time. It works with **Cowork** and **Claude Code**. **Codex** and other agents can use the same folder through `AGENTS.md`.
 
@@ -25,8 +25,7 @@ You feel the difference in the second session: you do not have to explain the sa
 2. Install the **personal-agentic-os** plugin
    (or type `/plugin install personal-agentic-os@personal-agentic-os`).
 3. Open or create the folder where your brain should live. A synced folder is best: Drive, iCloud, or Dropbox.
-4. Open or create the folder where your brain should live (a synced folder: Drive, iCloud, Dropbox).
-5. Use one of:
+4. Use one of:
    - `/agentic-os-setup` — initial configuration (idempotent, safe to run again)
    - `/agentic-os-coach` — the full coach: locates you and proposes the next step
    - `/escalera` — check your progress on the ladder at any time

@@ -1,8 +1,8 @@
 # Personal Agentic OS
 
-Claude arranca cada sesión sin saber quién sos, cómo trabajás ni dónde está lo importante. Personal Agentic OS le da una carpeta de texto para leer al inicio, así deja de improvisar.
+Claude arranca cada sesión sin saber quién sos, cómo trabajás ni dónde está lo importante. Personal Agentic OS es una carpeta de texto que lee al inicio, así deja de improvisar.
 
-Es una carpeta desde la que opera tu asistente.
+No es un segundo cerebro para que lo leas *vos*. Es un sistema operativo personal desde el que trabaja tu asistente: tu contexto, proyectos, skills y rutinas en archivos de texto, para que el agente sepa qué cargar y cuándo.
 
 Instalás un coach y ese coach arma el sistema con vos, de a un escalón. Sirve en **Cowork** y **Claude Code**. También lo puede usar **Codex** o cualquier agente que lea `AGENTS.md`.
 
