@@ -1,12 +1,12 @@
 {
-  "name": "secondbrain-claude",
+  "name": "personal-agentic-os",
   "owner": {
     "name": "brunogiel",
     "url": "https://github.com/brunogiel"
   },
   "plugins": [
     {
-      "name": "secondbrain",
+      "name": "personal-agentic-os",
       "source": "./",
       "description": "Un metodo instalable para que Claude (Code o Cowork) deje de adivinar quien sos: arranca con un coach que arma tu segundo cerebro y lo hace crecer, de a un escalon. Sin terminal en Cowork.",
       "version": "2.13.2",
@@ -16,6 +16,8 @@
       },
       "license": "MIT",
       "keywords": [
+        "personal-agentic-os",
+        "agentic-os",
         "second-brain",
         "productivity",
         "coach",

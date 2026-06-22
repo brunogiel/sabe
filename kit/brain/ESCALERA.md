@@ -4,7 +4,7 @@
   de la checklist del coach. (El ESTADO.md es otra cosa: el tablero fino que el asistente lee siempre.)
 -->
 
-# 🪜 Mi escalera SecondBrain
+# 🪜 Mi escalera Personal Agentic OS
 
 > Tu progreso. El coach lo mantiene: lo actualiza cuando trabajan juntos y te lo muestra cuando
 > le decís **"¿cómo vengo?"** o **"¿qué hacemos hoy?"**. Vos lo mirás para ver qué lograste y qué falta.
@@ -67,7 +67,7 @@ Agentes 100% autónomos que actúan sin tu OK, auto-mejora de skills en loop cer
 
 ## 📦 Todo lo que trae el kit (¿lo tenés?)
 
-> El mapa de lo que ofrece SecondBrain y vos ves/manejás, en un solo lugar, para que sepas **qué hay** y **qué te falta**.
+> El mapa de lo que ofrece Personal Agentic OS y vos ves/manejás, en un solo lugar, para que sepas **qué hay** y **qué te falta**.
 > Los **archivos base** vienen al instalar (ya los tenés). Los **skills de uso** vienen dormidos en el catálogo del kit y el coach te los va sumando cuando tocan — por eso acá ves cuáles ya activaste (`[x]`) y cuáles te esperan (`[ ]`).
 > El coach mantiene estas marcas. ¿Querés activar un skill antes de tiempo? Decile al coach *"sumame `<nombre>`"*. En Claude Code, si querés chequear updates del método, escribí **`actualizar`**; en Cowork el plugin se actualiza solo.
 

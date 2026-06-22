@@ -1,7 +1,7 @@
 ---
 name: auditar-sistema
 description: >
-  Revisa la salud de tu sistema SecondBrain y te propone arreglos (no los aplica solo).
+  Revisa la salud de tu Personal Agentic OS y te propone arreglos (no los aplica solo).
   Usalo cuando digas "auditá el sistema", "cómo está mi sistema", "revisión semanal",
   "pasale una revisión", "está todo ordenado?". Buen candidato a rutina (corre los sábados).
 ---

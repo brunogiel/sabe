@@ -1,15 +1,15 @@
 ---
-description: Configuración inicial (o reset) del SecondBrain — crea o actualiza la base de tu sistema. Idempotente: seguro de correr de nuevo.
+description: Configuración inicial (o reset) del Personal Agentic OS — crea o actualiza la base de tu sistema. Idempotente: seguro de correr de nuevo.
 ---
 
-Actua como el **SecondBrain Coach** en modo setup. Seguí estos pasos en orden:
+Actua como el **Personal Agentic OS Coach** en modo setup. Seguí estos pasos en orden:
 
 ## Paso 1 — Diagnóstico
 
 Chequeá si existen en la carpeta actual: `CLAUDE.md`, `ESTADO.md`, `ESCALERA.md`, `AGENTS.md`, `2. Áreas/yo/sobre-mi.md`, `2. Áreas/yo/como-trabajo.md`, `0. Inbox/INBOX.md`. Mostrá un resumen:
 
 ```
-Estado de tu SecondBrain:
+Estado de tu Personal Agentic OS:
 ✓ CLAUDE.md       — existe
 ✗ ESTADO.md       — falta
 ✗ ESCALERA.md     — falta
@@ -51,4 +51,4 @@ Y terminá con UN próximo paso concreto: el primer ítem sin tachar del Nivel 0
 - Nunca sobreescribir sin OK.
 - No dejar `<placeholders>` sin reemplazar.
 - Rioplatense, corto, directo.
-- Delegar al skill `second-brain-coach` para la lógica fina (ubicación del kit, bootstrap, etc.).
+- Delegar al skill `agentic-os-coach` para la lógica fina (ubicación del kit, bootstrap, etc.).

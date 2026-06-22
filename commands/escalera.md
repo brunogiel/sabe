@@ -1,5 +1,5 @@
 ---
-description: Muestra tu progreso en la escalera SecondBrain y propone el próximo paso concreto.
+description: Muestra tu progreso en la escalera del Personal Agentic OS y propone el próximo paso concreto.
 ---
 
 Leé el archivo `ESCALERA.md` de la carpeta actual y hacé esto:
@@ -15,7 +15,7 @@ Leé el archivo `ESCALERA.md` de la carpeta actual y hacé esto:
 
 4. **Si el usuario dice que ya hizo algo** — tachalo en `ESCALERA.md` (`[ ]` → `[x]`), actualizá la barra y el "Nivel actual" si corresponde, y mostrá el nuevo estado.
 
-5. **Si no existe `ESCALERA.md`** — avisá que el SecondBrain todavía no está armado y ofrecé correr `/second-brain-setup`.
+5. **Si no existe `ESCALERA.md`** — avisá que el Personal Agentic OS todavía no está armado y ofrecé correr `/agentic-os-setup`.
 
 ---
 

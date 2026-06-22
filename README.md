@@ -1,6 +1,6 @@
-# SecondBrain
+# Personal Agentic OS
 
-Claude starts every session without knowing who you are, how you work, or where the important stuff lives. SecondBrain gives it a plain-text folder to read at startup, so it stops guessing.
+Claude starts every session without knowing who you are, how you work, or where the important stuff lives. Personal Agentic OS gives it a plain-text folder to read at startup, so it stops guessing.
 
 It is not a second brain for you to read. It is a folder your assistant can operate from.
 
@@ -20,15 +20,15 @@ You feel the difference in the second session: you do not have to explain the sa
 
 ### Cowork (no terminal)
 
-1. In the **Customize** panel, under **Personal plugins**, click **+** and choose **Create plugin -> Add marketplace**. Paste: `brunogiel/secondbrain-claude`
-   (shortcut if you can type: `/plugin marketplace add brunogiel/secondbrain-claude`).
-2. Install the **secondbrain** plugin
-   (or type `/plugin install secondbrain@secondbrain-claude`).
+1. In the **Customize** panel, under **Personal plugins**, click **+** and choose **Create plugin -> Add marketplace**. Paste: `brunogiel/personal-agentic-os`
+   (shortcut if you can type: `/plugin marketplace add brunogiel/personal-agentic-os`).
+2. Install the **personal-agentic-os** plugin
+   (or type `/plugin install personal-agentic-os@personal-agentic-os`).
 3. Open or create the folder where your brain should live. A synced folder is best: Drive, iCloud, or Dropbox.
 4. Open or create the folder where your brain should live (a synced folder: Drive, iCloud, Dropbox).
 5. Use one of:
-   - `/second-brain-setup` — initial configuration (idempotent, safe to run again)
-   - `/second-brain-coach` — the full coach: locates you and proposes the next step
+   - `/agentic-os-setup` — initial configuration (idempotent, safe to run again)
+   - `/agentic-os-coach` — the full coach: locates you and proposes the next step
    - `/escalera` — check your progress on the ladder at any time
 
 The coach asks before creating files. It does not build folders behind your back. In Cowork, the plugin updates itself.
@@ -36,14 +36,14 @@ The coach asks before creating files. It does not build folders behind your back
 ### Claude Code
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/brunogiel/secondbrain-claude/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/brunogiel/personal-agentic-os/main/install.sh | bash
 ```
 
 Then open the folder where you want to work and type:
 
 ```text
-/second-brain-setup   # initial setup (idempotent)
-/second-brain-coach   # full coach: locates you + proposes next step
+/agentic-os-setup   # initial setup (idempotent)
+/agentic-os-coach   # full coach: locates you + proposes next step
 /escalera             # check your progress anytime
 ```
 
@@ -93,13 +93,13 @@ The rule is simple: there must be a clear router (`CLAUDE.md` or `AGENTS.md`) th
 In Claude Code:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/brunogiel/secondbrain-claude/main/uninstall.sh | SB_YES=1 bash
+curl -fsSL https://raw.githubusercontent.com/brunogiel/personal-agentic-os/main/uninstall.sh | SB_YES=1 bash
 ```
 
 In Cowork, uninstall the plugin from the UI or type:
 
 ```text
-/plugin uninstall secondbrain
+/plugin uninstall personal-agentic-os
 ```
 
 ## The ladder
@@ -125,7 +125,7 @@ Your brain is plain text. You can open the same folder in Cowork, Claude Code, C
 
 Use-skills live in `skills/` and are activated through the **Mis skills** table in `CLAUDE.md`. Codex and Cursor reach that table through `AGENTS.md`.
 
-The only Claude-specific piece is the setup engine: `/second-brain-coach` and, in Claude Code, `actualizar`. If you use another agent, `AGENTS.md` includes a fallback workflow.
+The only Claude-specific piece is the setup engine: `/agentic-os-coach` and, in Claude Code, `actualizar`. If you use another agent, `AGENTS.md` includes a fallback workflow.
 
 ## What's inside
 

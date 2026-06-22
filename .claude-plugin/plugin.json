@@ -1,15 +1,17 @@
 {
-  "name": "secondbrain",
+  "name": "personal-agentic-os",
   "description": "Claude arranca cada sesion adivinando quien sos. Esto lo corta: un coach que arma tu segundo cerebro (unos archivos de texto plano que Claude lee al iniciar) y lo hace crecer de a un escalon. Para Claude Code o Cowork. En Cowork se instala sin terminal.",
   "version": "2.13.2",
   "author": {
     "name": "Bruno Gielczynsky",
     "url": "https://www.linkedin.com/in/brunogiel/"
   },
-  "homepage": "https://github.com/brunogiel/secondbrain-claude",
-  "repository": "https://github.com/brunogiel/secondbrain-claude",
+  "homepage": "https://github.com/brunogiel/personal-agentic-os",
+  "repository": "https://github.com/brunogiel/personal-agentic-os",
   "license": "MIT",
   "keywords": [
+    "personal-agentic-os",
+    "agentic-os",
     "second-brain",
     "productivity",
     "coach",

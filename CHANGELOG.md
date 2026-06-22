@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.15.0 (2026-06-22)
+- **Rebrand: SecondBrain → Personal Agentic OS.** Se renombró el producto y todos sus identificadores. Repo `secondbrain-claude` → `personal-agentic-os`; plugin/marketplace `name` → `personal-agentic-os`; comandos `/second-brain-coach` → `/agentic-os-coach` y `/second-brain-setup` → `/agentic-os-setup`; skill folder `skills/second-brain-coach/` → `skills/agentic-os-coach/` (frontmatter `name: agentic-os-coach`). URLs y paths actualizados en `install.sh`, `uninstall.sh`, `motor-code/actualizar/`, READMEs, kit y plugin manifests. Se conservó `second-brain` como keyword (SEO) y "second brain coach" como alias natural del trigger. La historia previa del CHANGELOG NO se tocó.
+- **Pendiente:** pasada de copy del pitch (la prosa conceptual de "segundo cerebro / second brain" como propuesta de valor quedó sin tocar a propósito, para revisarla aparte).
+
 ## 2.14.0
 - **Dos comandos nuevos: `/second-brain-setup` y `/escalera`.** Inspirados en el patrón de Piero Sierra (SecondBrain KB).
   - **`/second-brain-setup`** — entrada dedicada al setup inicial, separada del coach. Idempotente: puede correrse de nuevo para reconfigurar sin pisar lo existente. Muestra un diagnóstico claro (qué existe vs qué falta), pregunta lo mínimo indispensable y arma lo que falta con OK del usuario. Pensado para onboarding explícito o para el que quiere saber "qué tengo configurado".

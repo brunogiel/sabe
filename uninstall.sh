@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #
-# SecondBrain uninstaller
-# https://github.com/brunogiel/secondbrain-claude
+# Personal Agentic OS uninstaller
+# https://github.com/brunogiel/personal-agentic-os
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/brunogiel/secondbrain-claude/main/uninstall.sh | SB_YES=1 bash
+#   curl -fsSL https://raw.githubusercontent.com/brunogiel/personal-agentic-os/main/uninstall.sh | SB_YES=1 bash
 #   (o, si clonaste el repo:  bash uninstall.sh)
 #
 # Saca SOLO el motor global del método (~/.claude/skills/: el coach + actualizar + migrar).
@@ -14,10 +14,10 @@
 set -euo pipefail
 
 SKILLS_DIR="${HOME}/.claude/skills"
-METHOD_SKILLS=("second-brain-coach" "actualizar")   # migrar ya no es skill (es doc del coach); actualizar es Code-only
+METHOD_SKILLS=("agentic-os-coach" "actualizar")   # migrar ya no es skill (es doc del coach); actualizar es Code-only
 
 echo ""
-echo "🧠  SecondBrain: desinstalar el motor global"
+echo "🧠  Personal Agentic OS: desinstalar el motor global"
 echo ""
 
 # --- qué hay para sacar ---
@@ -53,7 +53,7 @@ elif [ -t 0 ]; then
   read -r reply
 else
   echo "En modo pipe necesito confirmación explícita. Volvé a correr con SB_YES=1:"
-  echo "  curl -fsSL https://raw.githubusercontent.com/brunogiel/secondbrain-claude/main/uninstall.sh | SB_YES=1 bash"
+  echo "  curl -fsSL https://raw.githubusercontent.com/brunogiel/personal-agentic-os/main/uninstall.sh | SB_YES=1 bash"
   exit 0
 fi
 
