@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.23.0 (2026-06-23)
+- **Fix día-cero: el toolkit ya no intenta escribir en el kit read-only del plugin.** Un usuario corrió `/asb-write` sin brain armado; `redactar` confundió el `kit/brain/` del plugin (plantilla, read-only) con el brain del usuario, chocó con "Read-only file system" y se trabó pidiendo conectar carpeta. Regla nueva para todo el toolkit con estado: el `kit/brain/` del método NUNCA es destino de guardado, y lo que persiste, persiste solo si hay brain escribible.
+  - **`redactar` (`/asb-write`):** sin brain escribible, modo un solo tiro (aprende la voz de los ejemplos para ESE texto, escribe ahora, no persiste) y ofrece armar el brain con `/asb-coach` para acordarse. Con brain, guarda `mi-estilo.md` en `2. Áreas/yo/` como siempre.
+  - **`panel` / `council`:** el log de corrida (`skills/<n>/runs/`) ahora es opcional: se escribe solo si hay brain escribible; día cero se saltea y la corrida sigue normal.
+  - **`documenta` / `auditar-sistema`:** si no hay sistema todavía, no rutean/auditan; lo dicen claro y ofrecen armarlo con `/asb-coach`.
+- Cada cambio se aplicó a las dos copias sincronizadas (kit + comando), verificadas byte-idénticas.
+- Tocados: `kit/skills/{redactar,panel,council,documenta,auditar-sistema}/SKILL.md` + `commands/asb-{write,panel,council,doc,audit}.md`, `VERSION`, `.claude-plugin/*`, `CHANGELOG.md`.
+
 ## 2.22.0 (2026-06-23)
 - **README (EN/ES) afinado tras review de Bruno + un panel de 5 lentes (idiomas, higiene, contrarian, destinatario, editor).**
   - **Install con un solo comando visible, `/asb`** (antes `/asb` + `/asb-coach`). Y `/asb` ahora **arranca el coach directo** cuando no hay sistema (antes solo apuntaba a `/asb-coach`): el usuario nuevo no queda dando vueltas.

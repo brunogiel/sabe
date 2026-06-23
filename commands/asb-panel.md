@@ -92,8 +92,8 @@ Reglas: apoyate en lo que trajeron los reviewers (citá la lente: "el Destinatar
 Cerrar toda corrida devolviéndole la decisión al usuario. La bajada propone; este paso confirma que la decisión es suya. La firma del skill:
 > **Ahora vos:** la bajada es una lectura, no una orden. ¿Qué te resuena? ¿Qué vas a cambiar y qué vas a dejar igual aunque un reviewer lo marque?
 
-### Paso 7: loguear la corrida [DET]
-Append a `skills/panel/runs/YYYY-MM-DD.json` (crear `runs/` si falta). Schema:
+### Paso 7: loguear la corrida [DET] (solo si hay brain escribible)
+El log es CONDICIONAL. Append a `skills/panel/runs/YYYY-MM-DD.json` SOLO si hay un brain escribible del usuario (la carpeta `skills/` del brain existe o se puede crear). Si NO hay brain escribible (día cero, sin brain), SALTÁ este paso y corré normal: nunca escribas en el `kit/brain/` del método (es read-only). Schema (crear `runs/` si falta):
 ```json
 {
   "fecha": "YYYY-MM-DDTHH:MM",
@@ -147,7 +147,7 @@ EL CAMBIO:
 
 ## Qué lee y escribe
 - **Lee:** el artefacto (pegado o por path) y, para contexto, el `CLAUDE.md` del proyecto activo si hace falta.
-- **Escribe:** el mapa va al chat. El log siempre a `skills/panel/runs/`. No reescribe el artefacto (si después querés reescribir con lo que salió, eso es otro pedido, y si es texto pasa por `redactar`).
+- **Escribe:** el mapa va al chat. El log a `skills/panel/runs/` solo si hay brain escribible (día cero se saltea, nunca al `kit/brain/`). No reescribe el artefacto (si después querés reescribir con lo que salió, eso es otro pedido, y si es texto pasa por `redactar`).
 
 ## Cuándo NO usar
 - Búsquedas factuales o tareas mecánicas (no son review).
@@ -162,7 +162,7 @@ EL CAMBIO:
 - [ ] El MAPA quedó neutro: coincidencias como cuenta ("N de M lentes"), contradicciones explícitas, cero lenguaje de recomendación dentro del mapa.
 - [ ] Después del mapa (separado con `---`) hubo una bajada accionable con sus tres partes (propuesta + oportunidades + pasos), apoyada en lo que trajeron los reviewers y marcada como lectura para arrancar, no veredicto.
 - [ ] La corrida cerró devolviendo la pelota (paso 6), no dictando qué hacer.
-- [ ] `skills/panel/runs/YYYY-MM-DD.json` tiene la corrida logueada con el schema completo (incluida la bajada).
+- [ ] Si hay brain escribible, `skills/panel/runs/YYYY-MM-DD.json` tiene la corrida logueada con el schema completo (incluida la bajada); día cero (sin brain) el log se saltea y nunca se escribe en `kit/brain/`.
 
 ## Notas
 - **Spawnear siempre en paralelo.** Secuencial desperdicia tiempo y deja que un reviewer contamine al siguiente.

@@ -33,6 +33,9 @@ Si tu sistema tiene un destino externo conectado (un Notion compartido, una hoja
 
 ## Flujo
 
+### Paso 0: ¿Hay sistema todavía? [DET]
+Antes de rutear nada, mirá si hay un brain escribible: un `CLAUDE.md` de proyecto, carpetas PARA (`0. Inbox`, `1. Proyectos`, `2. Áreas`...), un destino donde guardar. Si lo único que hay es el kit read-only del método (sin proyecto, sin carpetas tuyas), todavía no tenés sistema. No rutees ni escribas, y NUNCA escribas dentro del `kit/brain/` del método. Decílo claro: "todavía no tenés un sistema para documentar; lo armamos con `/asb-coach` y volvemos a correr esto". Frená acá.
+
 ### Paso 1: Ubicar el contexto [DET]
 - Detectar el o los proyectos activos de la conversación (por la carpeta donde estás + de qué se habló).
 - Leer su `CLAUDE.md` (y su `STATUS.md`/`ESTADO.md` si tiene) para conocer **sus** convenciones: ¿tiene `Log de decisiones`? ¿un estado vivo aparte? ¿algún destino externo conectado?

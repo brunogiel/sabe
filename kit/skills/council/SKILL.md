@@ -112,9 +112,9 @@ Escaneable, en bullets. La recomendación NO puede ser "depende": el chairman se
 
 Solo si el usuario lo pide o la decisión es lo bastante importante como para volver a ella. Escribí `council-transcript-[timestamp].md` en la carpeta del proyecto activo, o en `output/` si no hay proyecto activo.
 
-### Paso 7: loguear la corrida [DET]
+### Paso 7: loguear la corrida [DET] (solo si hay brain escribible)
 
-Siempre, haya transcript o no. Append a `skills/council/runs/YYYY-MM-DD.json` (crear `runs/` si falta; si ya existe el archivo del día, append a su array). Schema:
+El log es CONDICIONAL. Haya transcript o no, append a `skills/council/runs/YYYY-MM-DD.json` SOLO si hay un brain escribible del usuario (la carpeta `skills/` del brain existe o se puede crear). Si NO hay brain escribible (día cero, sin brain), SALTÁ este paso y corré normal: nunca escribas en el `kit/brain/` del método (es read-only). Schema (crear `runs/` si falta; si ya existe el archivo del día, append a su array):
 
 ```json
 {
@@ -185,7 +185,7 @@ Devolvé exacto este formato:
 ## Qué lee y escribe
 
 - **Lee:** la decisión que trae el usuario y los archivos que referenció. Para contexto, si existen: el `CLAUDE.md` del proyecto activo y `2. Áreas/yo/sobre-mi.md` (quién decide). Todo opcional: si no están, el council corre igual.
-- **Escribe:** el veredicto va al chat. El log siempre a `skills/council/runs/`. El transcript completo solo si lo piden (paso 6). No reescribe el artefacto ni ejecuta la decisión: te da la recomendación, la decisión la tomás vos.
+- **Escribe:** el veredicto va al chat. El log a `skills/council/runs/` solo si hay brain escribible (día cero se saltea, nunca al `kit/brain/`). El transcript completo solo si lo piden (paso 6). No reescribe el artefacto ni ejecuta la decisión: te da la recomendación, la decisión la tomás vos.
 
 ## Cuándo NO usar
 
@@ -202,7 +202,7 @@ Devolvé exacto este formato:
 - [ ] Se evaluó a los asesores antes del chairman: los genéricos o fuera de lente se re-tiraron una vez y se descartaron si volvieron vagos. Si quedaron <3 válidos, se frenó y se avisó.
 - [ ] El veredicto tiene las 5 secciones y una recomendación que NO es "depende": el chairman se jugó una salida.
 - [ ] No se generó HTML ni archivos de reporte; el veredicto vive en el chat.
-- [ ] `skills/council/runs/YYYY-MM-DD.json` tiene la corrida logueada con el schema completo.
+- [ ] Si hay brain escribible, `skills/council/runs/YYYY-MM-DD.json` tiene la corrida logueada con el schema completo; día cero (sin brain) el log se saltea y nunca se escribe en `kit/brain/`.
 
 ## Notas
 
