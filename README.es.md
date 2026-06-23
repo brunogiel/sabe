@@ -2,11 +2,11 @@
 
 Claude arranca cada sesión sin saber quién sos, cómo trabajás ni dónde está lo importante. Agentic Second Brain lo corta: una carpeta de texto plano que lee al inicio, así deja de improvisar.
 
-A diferencia de un segundo cerebro clásico, este casi no lo leés vos. Tu asistente trabaja desde él: tu contexto, proyectos, skills y rutinas en archivos de texto, para que el agente sepa qué cargar y cuándo.
+A diferencia de las notas que guardás para vos, esta carpeta es compartida: vos y tu asistente la leen y editan, pero el que trabaja desde ella es el agente, cargando lo que cada tarea necesita para actuar.
 
 Instalás un coach y arma el resto con vos, de a un escalón. Sirve en **Cowork** y **Claude Code**; **Codex** y otros agentes usan la misma carpeta vía `AGENTS.md`.
 
-> **Idioma.** El coach habla en rioplatense (es la personalidad del método) y las carpetas base vienen con nombres en español que podés renombrar. Tu brain y tu contenido quedan en el idioma en que trabajes. README en inglés: [README.md](README.md).
+> Versión en inglés: [README.md](README.md).
 
 ---
 
@@ -51,16 +51,9 @@ Corren como slash commands en Cowork y en Claude Code, sin configurar nada. En C
 
 ### Cowork (sin terminal)
 
-1. En **Complementos personales** tocá el **+**, elegí **Crear plugin -> Agregar marketplace** y pegá: `brunogiel/agentic-second-brain`
-   (atajo si podés escribir: `/plugin marketplace add brunogiel/agentic-second-brain`).
-2. Instalá el plugin **agentic-second-brain**
-   (o escribí `/plugin install agentic-second-brain@agentic-second-brain`).
-3. Abrí o creá una carpeta donde quieras que viva tu brain (Drive, iCloud o Dropbox).
-4. Usá uno de:
-   - `/asb` (empezá por acá): el conserje, con tu toolkit y dónde vas parado
-   - `/asb-coach`: el coach que arma tu sistema, te ubica y propone el próximo paso
-
-El coach pregunta antes de crear archivos. No arma carpetas por atrás. En Cowork el plugin se actualiza solo.
+1. Escribí `/setup-cowork install agentic-second-brain@agentic-second-brain` (el nombre se repite porque es `plugin@marketplace`).
+2. Abrí o creá la carpeta donde quieras que viva tu brain. Mejor una sincronizada: Drive, iCloud o Dropbox.
+3. Escribí `/asb` para arrancar. Pregunta antes de crear nada, nunca arma carpetas por atrás, y en Cowork el plugin se actualiza solo.
 
 ### Claude Code
 
@@ -68,31 +61,15 @@ El coach pregunta antes de crear archivos. No arma carpetas por atrás. En Cowor
 curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/install.sh | bash
 ```
 
-Instala el método y los comandos de forma global y no toca tu carpeta del brain. Después abrí la carpeta donde querés trabajar y escribí:
-
-```text
-/asb        # el conserje: tu toolkit + dónde vas parado (empezá por acá)
-/asb-coach  # el coach: arma tu sistema, te ubica + propone el próximo paso
-```
-
-## Qué NO es
-
-- **No es un cuaderno que leés vos.** A diferencia de Obsidian o Notion, el lector no sos vos. Es tu asistente.
-- **No es un framework de dev.** Métodos tipo BMAD corren un build de software; esto guarda tu contexto de trabajo entero. Conviven.
-- **No es Claude pelado.** Dejás de re-presentarte y re-explicar tus proyectos en cada sesión.
+Instala el método y los comandos de forma global y no toca tu carpeta del brain. Después abrí la carpeta donde querés trabajar y escribí `/asb` para arrancar.
 
 ## Por qué funciona
 
-El modelo genera texto. El cliente (Cowork, Claude Code, Codex) le da manos para leer y escribir archivos. Tu carpeta le da el contexto: quién sos, qué proyectos tenés, qué reglas seguir y dónde buscar. Tres ingredientes simples, sin magia.
+El modelo genera texto. El cliente (Cowork, Claude Code, Codex) le da manos para leer y escribir archivos. Tu carpeta le da el contexto. El beneficio: tu ventana de contexto queda barata y despejada, porque en vez de cargar todo, el agente trae el archivo o dos que la tarea necesita.
 
-## Qué se instala
+Eso funciona por el layout. Es PARA (proyectos, áreas, recursos, archivo) más un inbox, con un router chico (`CLAUDE.md`) arriba que mapea dónde vive cada cosa. Los archivos son chicos y de un solo tema, así el router apunta y el agente trae, y vos podés abrir o editar cualquier pieza a mano sin romper nada.
 
-Dos partes, separadas:
-
-- **El método** vive fuera de tu carpeta. En Cowork es un plugin; en Claude Code vive en `~/.claude/skills/`. Ahí están el coach, las plantillas y el catálogo del kit.
-- **Tu brain** vive en tu carpeta sincronizada, y guarda solo lo tuyo.
-
-Tu carpeta del brain termina viéndose así:
+Dos partes quedan separadas. **El método** vive fuera de tu carpeta (un plugin en Cowork, `~/.claude/skills/` en Claude Code) y trae el coach, las plantillas y el catálogo del kit. **Tu brain** es tu carpeta sincronizada, y guarda solo lo tuyo. Termina viéndose así (nombres base, renombrá a gusto):
 
 ```text
 CLAUDE.md        # el router que tu asistente lee primero
@@ -106,8 +83,6 @@ AGENTS.md        # puntero para agentes no-Claude
 4. Archivo/      # terminado o dormido
 skills/          # los skills que activaste
 ```
-
-El directorio `kit/` de este repo pertenece al método, no a tu brain: `kit/brain/` trae las plantillas de carpetas y `kit/skills/` el catálogo que el coach activa de a uno.
 
 ## Si ya tenés un sistema
 
@@ -150,13 +125,11 @@ El coach lee `ESTADO.md` y `ESCALERA.md`, te dice dónde estás y propone un sol
 
 ## Portabilidad
 
-Tu brain son archivos de texto. Podés abrir la misma carpeta en Cowork, Claude Code, Codex o Cursor.
-
-Los skills de uso viven en `skills/` y se activan desde la tabla **Mis skills** de `CLAUDE.md`. Codex y Cursor llegan a esa tabla por `AGENTS.md`. Lo único específico de Claude es el motor de armado: `/asb-coach` y, en Claude Code, `actualizar`. Si usás otro agente, `AGENTS.md` trae un fallback para operar el sistema a mano.
+Tu brain son archivos de texto. Podés abrir la misma carpeta en Cowork, Claude Code, Codex o Cursor. Los skills de uso viven en `skills/` y se disparan desde la tabla **Mis skills** de `CLAUDE.md`, que Codex y Cursor alcanzan por `AGENTS.md`. Lo único específico de Claude es el motor de armado (`/asb-coach`, y en Claude Code el updater `actualizar`); para otros agentes, `AGENTS.md` trae un fallback.
 
 ## Skills
 
-La mayoría de las skills del kit son el toolkit de arriba, disponibles como comandos `/asb-*` desde el día uno. El coach además puede activar cualquiera como skill editable en tu propia carpeta `skills/` a medida que subís. Tres más no tienen comando, y el coach las suma cuando llegás a su nivel: `crear-skill` (armá el tuyo), `triage` (un brief del día con mail, agenda y tareas conectadas) y `evaluar-skill` (medí un skill contra su rúbrica).
+La mayoría del kit es el toolkit de arriba. Tres skills no tienen comando, y el coach las suma a medida que subís: `crear-skill` (armá el tuyo), `triage` (un brief del día con mail, agenda y tareas conectadas) y `evaluar-skill` (medí un skill contra su rúbrica).
 
 ## Filosofía
 

@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.22.0 (2026-06-23)
+- **README (EN/ES) afinado tras review de Bruno + un panel de 5 lentes (idiomas, higiene, contrarian, destinatario, editor).**
+  - **Install con un solo comando visible, `/asb`** (antes `/asb` + `/asb-coach`). Y `/asb` ahora **arranca el coach directo** cuando no hay sistema (antes solo apuntaba a `/asb-coach`): el usuario nuevo no queda dando vueltas.
+  - **Cowork install corregido** a `/setup-cowork install agentic-second-brain@agentic-second-brain` (antes el baile viejo de `/plugin marketplace add` + `/plugin install`), con nota de que el nombre se repite porque es `plugin@marketplace`.
+  - **Intro reframeado a "carpeta compartida"** (los dos la leen y editan) pero conservando el filo: el agente es el que trabaja desde ella. Se sacó la sección "What this is not".
+  - **"How it works" + "What gets installed" fusionados** en una sola sección, benefit-first (la ventana de contexto queda barata), con la arquitectura PARA y el árbol como evidencia. Trim de redundancia con Skills/Portability. Árbol con nota "starter names, rename to taste".
+  - Nota de idioma reducida a un link al otro README.
+- **Pendiente declarado (la migración grande): english-first del método entero.** El README es inglés pero las carpetas/archivos/skills del kit + el coach siguen en español (spanglish que ve el usuario nuevo: `1. Proyectos/`, `2. Áreas/yo/`, `ESTADO.md`, `crear-skill`, etc.). Es una migración acoplada (~30 archivos: rename de carpetas/archivos + traducir las 12 skills + el coach + plantillas + paso de idioma en el coach). No se hace a medias porque genera más spanglish. Va como pasada dedicada.
+- Tocados: `README.md`, `README.es.md`, `commands/asb.md`, `VERSION`, `.claude-plugin/*`, `CHANGELOG.md`.
+
 ## 2.21.0 (2026-06-22)
 - **Los 9 comandos del toolkit ahora son self-contained (contenido completo inline).** Antes eran wrappers finos que mandaban a leer `kit/skills/X/SKILL.md`: en el menú de Cowork se veían vacíos, y la indirección podía fallar si la ruta no resolvía (el riesgo #1 que marcó la ortiva). Ahora cada `/asb-*` trae el skill entero adentro: se ve completo y siempre anda, sin depender de resolver un path.
 - **Las copias del kit se conservan** (sirven para activar la skill en el brain del usuario y para portabilidad a Codex/Cursor). El body del comando y el del kit quedan idénticos: misma fuente, copiada en los dos runtimes (mantener en sync al editar).
