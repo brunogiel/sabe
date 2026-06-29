@@ -142,7 +142,7 @@ The coach reads `ESTADO.md` and `ESCALERA.md`, tells you where you are, and prop
 
 ## Portability
 
-Your brain is plain text. You can open the same folder in Cowork, Claude Code, Codex, or Cursor. Use-skills live in `skills/` and are triggered through the **Mis skills** table in `CLAUDE.md`, which Codex and Cursor reach through `AGENTS.md`. The only Claude-specific piece is the setup engine (`/brain-coach`, and in Claude Code the `actualizar` updater); for other agents, `AGENTS.md` has a fallback workflow.
+Your brain is plain text. You can open the same folder in Cowork, Claude Code, Codex, or Cursor. Use-skills live in `skills/` and are triggered through the **Mis skills** table in `CLAUDE.md`, which Codex and Cursor reach through `AGENTS.md`. Since each skill is a plain-text folder, you can copy any of them out of `skills/` into another agent and use it there: they don't depend on Claude. The only Claude-specific piece is the setup engine (`/brain-coach`, and in Claude Code the `actualizar` updater); for other agents, `AGENTS.md` has a fallback workflow.
 
 ## Skills
 

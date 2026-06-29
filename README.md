@@ -142,7 +142,7 @@ El coach lee `ESTADO.md` y `ESCALERA.md`, te dice dónde estás y propone un sol
 
 ## Portabilidad
 
-Tu brain son archivos de texto. Podés abrir la misma carpeta en Cowork, Claude Code, Codex o Cursor. Los skills de uso viven en `skills/` y se disparan desde la tabla **Mis skills** de `CLAUDE.md`, que Codex y Cursor alcanzan por `AGENTS.md`. Lo único específico de Claude es el motor de armado (`/brain-coach`, y en Claude Code el updater `actualizar`); para otros agentes, `AGENTS.md` trae un fallback.
+Tu brain son archivos de texto. Podés abrir la misma carpeta en Cowork, Claude Code, Codex o Cursor. Los skills de uso viven en `skills/` y se disparan desde la tabla **Mis skills** de `CLAUDE.md`, que Codex y Cursor alcanzan por `AGENTS.md`. Como cada skill es una carpeta de texto plano, podés copiar la que quieras de `skills/` a otro agente y usarla ahí: no dependen de Claude. Lo único específico de Claude es el motor de armado (`/brain-coach`, y en Claude Code el updater `actualizar`); para otros agentes, `AGENTS.md` trae un fallback.
 
 ## Skills
 
