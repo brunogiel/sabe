@@ -1,8 +1,8 @@
-# SABE
+# Agentic Second Brain
 
-*Second-brain Agentic Build Engine.* SABE means "it knows" in Spanish: it knows where your stuff lives, and it knows what to do with your requests.
+*Your second brain, agentic.* Your assistant knows where your stuff lives and what to do with your requests, from the first message.
 
-Claude starts every session not knowing who you are, how you work, or where things live. SABE fixes that: a folder with plain-text files it reads at startup, so it stops guessing.
+Claude starts every session not knowing who you are, how you work, or where things live. Agentic Second Brain fixes that: a folder with plain-text files it reads at startup, so it stops guessing.
 
 Unlike notes you keep for yourself, this folder is shared: you and your assistant both read and edit it, but the agent is the one working from it, loading what each task needs to act.
 
@@ -34,20 +34,20 @@ The plugin ships slash commands that work the moment you install it, with no set
 
 | Command | What it does |
 |---|---|
-| `/sabe` | Front desk: shows your tools and where you stand |
-| `/sabe-coach` | Builds your personal system, one step at a time (the engine) |
-| `/sabe-slop` | Strips the AI smell from a text in one pass |
-| `/sabe-write` | Writes or rewrites in your voice |
-| `/sabe-prompt` | Turns a rough ask into a paste-ready prompt for any AI chat |
-| `/sabe-panel` | 2 to 5 reviewers, different lenses, on something before you send it |
-| `/sabe-council` | A council of 5 advisors for a decision with real stakes |
-| `/sabe-verify` | The gate before you send: checks the output meets the ask and fact-checks its data |
-| `/sabe-deck` | Builds a presentation in stages, rough to final |
-| `/sabe-audit` | Health check of your second brain |
-| `/sabe-doc` | Closes a session: routes everything durable to its place |
-| `/sabe-simple` | Lost the thread? Plain-language recap: where we are, your move, mine |
+| `/brain` | Front desk: shows your tools and where you stand |
+| `/brain-coach` | Builds your personal system, one step at a time (the engine) |
+| `/brain-slop` | Strips the AI smell from a text in one pass |
+| `/brain-write` | Writes or rewrites in your voice |
+| `/brain-prompt` | Turns a rough ask into a paste-ready prompt for any AI chat |
+| `/brain-panel` | 2 to 5 reviewers, different lenses, on something before you send it |
+| `/brain-council` | A council of 5 advisors for a decision with real stakes |
+| `/brain-verify` | The gate before you send: checks the output meets the ask and fact-checks its data |
+| `/brain-deck` | Builds a presentation in stages, rough to final |
+| `/brain-audit` | Health check of your second brain |
+| `/brain-doc` | Closes a session: routes everything durable to its place |
+| `/brain-simple` | Lost the thread? Plain-language recap: where we are, your move, mine |
 
-The toolkit commands are stock and work the same for everyone; `/sabe-coach` builds the part that is yours (your projects, identity, and your own skills). A *skill* is a saved recipe a phrase triggers: using these is the fastest way to see what one is before you write your own.
+The toolkit commands are stock and work the same for everyone; `/brain-coach` builds the part that is yours (your projects, identity, and your own skills). A *skill* is a saved recipe a phrase triggers: using these is the fastest way to see what one is before you write your own.
 
 They run as slash commands in both Cowork and Claude Code, with no setup. In Cowork you can also trigger them by describing what you want.
 
@@ -55,17 +55,17 @@ They run as slash commands in both Cowork and Claude Code, with no setup. In Cow
 
 ### Cowork (no terminal)
 
-1. Type `/setup-cowork install sabe@sabe` (the name repeats because it is `plugin@marketplace`).
+1. Type `/setup-cowork install brain@agentic-second-brain` (the name repeats because it is `plugin@marketplace`).
 2. Open or create the folder where your brain should live. A synced folder is best: Drive, iCloud, or Dropbox.
-3. Type `/sabe` to start. It asks before creating anything, never builds folders behind your back, and in Cowork the plugin updates itself.
+3. Type `/brain` to start. It asks before creating anything, never builds folders behind your back, and in Cowork the plugin updates itself.
 
 ### Claude Code
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/brunogiel/sabe/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/install.sh | bash
 ```
 
-It installs the method and commands globally and does not touch your brain folder. Then open the folder where you want to work and type `/sabe` to start.
+It installs the method and commands globally and does not touch your brain folder. Then open the folder where you want to work and type `/brain` to start.
 
 ## How it works
 
@@ -105,22 +105,22 @@ The rule is simple: there must be a clear router (`CLAUDE.md` or `AGENTS.md`) th
 To uninstall in Claude Code:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/brunogiel/sabe/main/uninstall.sh | SB_YES=1 bash
+curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/uninstall.sh | SB_YES=1 bash
 ```
 
-In Cowork, uninstall the plugin from the UI or type `/plugin uninstall sabe`.
+In Cowork, uninstall the plugin from the UI or type `/plugin uninstall brain`.
 
 ## Coming from "Agentic Second Brain"?
 
-SABE is the same method, now with its own name. If you installed it earlier (the `/asb-*` commands), reinstall to move to `/sabe-*` and remove the old artifacts by hand. Your brain folder is left untouched.
+Agentic Second Brain is the same method, now with its own name. If you installed it earlier (the `/asb-*` commands), reinstall to move to `/brain-*` and remove the old artifacts by hand. Your brain folder is left untouched.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/brunogiel/sabe/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/install.sh | bash
 rm -rf ~/.claude/skills/agentic-second-brain-coach
 for c in asb asb-coach asb-slop asb-write asb-prompt asb-panel asb-council asb-deck asb-audit asb-doc asb-simple asb-triage; do rm -f ~/.claude/commands/$c.md; done
 ```
 
-In Cowork: uninstall the old plugin from the UI and reinstall with `/setup-cowork install sabe@sabe`.
+In Cowork: uninstall the old plugin from the UI and reinstall with `/setup-cowork install brain@agentic-second-brain`.
 
 ## The ladder
 
@@ -141,11 +141,11 @@ The coach reads `ESTADO.md` and `ESCALERA.md`, tells you where you are, and prop
 
 ## Portability
 
-Your brain is plain text. You can open the same folder in Cowork, Claude Code, Codex, or Cursor. Use-skills live in `skills/` and are triggered through the **Mis skills** table in `CLAUDE.md`, which Codex and Cursor reach through `AGENTS.md`. The only Claude-specific piece is the setup engine (`/sabe-coach`, and in Claude Code the `actualizar` updater); for other agents, `AGENTS.md` has a fallback workflow.
+Your brain is plain text. You can open the same folder in Cowork, Claude Code, Codex, or Cursor. Use-skills live in `skills/` and are triggered through the **Mis skills** table in `CLAUDE.md`, which Codex and Cursor reach through `AGENTS.md`. The only Claude-specific piece is the setup engine (`/brain-coach`, and in Claude Code the `actualizar` updater); for other agents, `AGENTS.md` has a fallback workflow.
 
 ## Skills
 
-Most of the kit is the toolkit above. Add `/sabe-triage` (your daily brief) once you connect a source over MCP: mail, calendar, or tasks. Two more skills have no command, and the coach adds them as you climb: `crear-skill` (build your own) and `evaluar-skill` (grade a skill against its rubric).
+Most of the kit is the toolkit above. Add `/brain-triage` (your daily brief) once you connect a source over MCP: mail, calendar, or tasks. Two more skills have no command, and the coach adds them as you climb: `crear-skill` (build your own) and `evaluar-skill` (grade a skill against its rubric).
 
 ## Philosophy
 

@@ -1,25 +1,25 @@
 #!/usr/bin/env bash
 #
-# SABE installer — vía Claude Code (terminal).
-# https://github.com/brunogiel/sabe
+# Agentic Second Brain installer — vía Claude Code (terminal).
+# https://github.com/brunogiel/agentic-second-brain
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/brunogiel/sabe/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/install.sh | bash
 #
 # ¿En Cowork (sin terminal)? NO uses esto: instalá el plugin desde la UI de plugins.
-#   /setup-cowork install sabe@sabe
+#   /setup-cowork install brain@agentic-second-brain
 #
 # Dos baldes, claros:
 #   1. EL MÉTODO (global, ~/.claude/skills/): se instala como una app. El motor (el coach, +
 #      el updater actualizar que es Code-only) más el kit que el coach usa (kit/brain + kit/skills)
-#      bundled adentro del coach. Invisible; se usa vía /sabe-coach.
+#      bundled adentro del coach. Invisible; se usa vía /brain-coach.
 #   2. TU BRAIN (esta carpeta): SOLO lo tuyo — CLAUDE.md (router) + ESTADO.md + ESCALERA.md +
 #      AGENTS.md, las carpetas PARA + 0. Inbox, tu identidad en "2. Áreas/yo/", y skills/ (los
 #      skills que usás, que el coach te va sumando). Nada del método ensucia tu carpeta.
-# Descarga atómica: si algo falla, no te deja a medias. Después: abrí Claude acá y escribí /sabe-coach
+# Descarga atómica: si algo falla, no te deja a medias. Después: abrí Claude acá y escribí /brain-coach
 set -euo pipefail
 
-REPO="brunogiel/sabe"
+REPO="brunogiel/agentic-second-brain"
 BRANCH="main"
 RAW="https://raw.githubusercontent.com/${REPO}/${BRANCH}"
 
@@ -30,10 +30,8 @@ RAW="https://raw.githubusercontent.com/${REPO}/${BRANCH}"
 
 # --- el método (global) ---
 SKILLS_DIR="${HOME}/.claude/skills"
-COACH_DIR="${SKILLS_DIR}/sabe-coach"          # el coach + sus piezas + el kit, bundled
-SKILLS_MOTOR=("sabe-coach")   # el único skill activo del motor (lo escanea el plugin)
-# actualizar es Code-only (en Cowork el plugin se autoactualiza): vive en motor-code/, no es skill del plugin,
-# pero este curl (para Code) lo instala global igual. migrar dejó de ser skill: es un doc del coach (migracion.md).
+COACH_DIR="${SKILLS_DIR}/brain-coach"          # el coach + sus piezas + el kit, bundled (instalado con prefijo brain-)
+MOTOR_SRC="brain-coach"                        # el skill motor en el repo (skills/brain-coach); en el plugin se ve brain:brain-coach
 SKILLS_USO=("redactar" "anti-slop" "crear-skill" "evaluar-skill" "auditar-sistema" "triage" "ppt-builder" "panel" "council" "prompt-optimizer" "documenta" "simple" "verificar")  # kit/skills
 
 # --- el brain que se scaffoldea (desde kit/brain/) ---
@@ -43,7 +41,7 @@ YO_EXTRA=("soul.md" "dev-prefs.md")   # NO se scaffoldean; el coach los suma des
 RECURSOS=("arquitectura-skills.md" "anti-slop-writing.md")
 
 echo ""
-echo "🧠  SABE — instalando el método..."
+echo "🧠  Agentic Second Brain — instalando el método..."
 echo ""
 
 # --- 0. precheck de red ---
@@ -73,34 +71,36 @@ for f in "${RECURSOS[@]}";  do fetch "kit/brain/recursos/${f}"  "kit/brain/recur
 fetch "kit/brain/inbox/INBOX.md" "kit/brain/inbox/INBOX.md"
 # kit/skills (catálogo de skills de uso): se bundlea con el coach
 for s in "${SKILLS_USO[@]}"; do fetch "kit/skills/${s}/SKILL.md" "kit/skills/${s}/SKILL.md"; done
-# el motor
-for s in "${SKILLS_MOTOR[@]}"; do fetch "skills/${s}/SKILL.md" "motor/${s}/SKILL.md"; done
+# el motor (skills/coach en el repo)
+fetch "skills/${MOTOR_SRC}/SKILL.md" "motor/${MOTOR_SRC}/SKILL.md"
 # actualizar (Code-only): vive en motor-code/, lo bajamos para instalarlo global en Code
 fetch "motor-code/actualizar/SKILL.md" "motor/actualizar/SKILL.md"
 mkdir -p "${TMP}/motor/actualizar"
 curl -fsSL "${RAW}/motor-code/actualizar/check-update.sh" -o "${TMP}/motor/actualizar/check-update.sh" 2>/dev/null || true
 # las piezas del coach (hermanas de su SKILL.md), incluida la guía de migración
-fetch "skills/sabe-coach/reference.md"          "coach/reference.md"
-fetch "skills/sabe-coach/plantilla-proyecto.md" "coach/plantilla-proyecto.md"
-fetch "skills/sabe-coach/ejemplos.md"           "coach/ejemplos.md"
-fetch "skills/sabe-coach/migracion.md"          "coach/migracion.md"
+fetch "skills/${MOTOR_SRC}/reference.md"          "coach/reference.md"
+fetch "skills/${MOTOR_SRC}/plantilla-proyecto.md" "coach/plantilla-proyecto.md"
+fetch "skills/${MOTOR_SRC}/ejemplos.md"           "coach/ejemplos.md"
+fetch "skills/${MOTOR_SRC}/migracion.md"          "coach/migracion.md"
 fetch "VERSION"      "coach/VERSION"
 fetch "CHANGELOG.md" "coach/CHANGELOG.md"
 
-# comandos slash (Code): se instalan en ~/.claude/commands/ para que aparezcan como /sabe, /sabe-coach y el toolkit /sabe-*
-COMMANDS=("sabe" "sabe-coach" "sabe-slop" "sabe-write" "sabe-panel" "sabe-council" "sabe-prompt" "sabe-deck" "sabe-audit" "sabe-doc" "sabe-simple" "sabe-triage" "sabe-verify")
-for c in "${COMMANDS[@]}"; do fetch "commands/${c}.md" "commands/${c}.md"; done
+# comandos slash (Code): se instalan en ~/.claude/commands/ con prefijo brain- para no chocar
+# con comandos genéricos. En el plugin (Cowork) se ven como brain:coach (sin prefijo redundante).
+CONSERJE="brain"                                                                                              # commands/brain.md → /brain
+TOOLKIT=("coach" "slop" "write" "panel" "council" "prompt" "deck" "audit" "doc" "simple" "triage" "verify")   # commands/<x>.md → /brain-<x>
+fetch "commands/${CONSERJE}.md" "commands/${CONSERJE}.md"
+for c in "${TOOLKIT[@]}"; do fetch "commands/${c}.md" "commands/${c}.md"; done
 
 # NOTA: este script NO arma tu carpeta del brain. Eso lo hace el coach, charlando y
 # preguntándote (igual que en Cowork): así nada se crea sin tu OK. Acá solo instalamos
-# el método (motor + kit) global. El brain lo armás vos con /sabe-coach.
+# el método (motor + kit) global. El brain lo armás vos con /brain-coach.
 
 # ============ EL MÉTODO (global, ~/.claude/skills/) ============
 mkdir -p "$SKILLS_DIR"
-for s in "${SKILLS_MOTOR[@]}"; do
-  mkdir -p "${SKILLS_DIR}/${s}"
-  cp "${TMP}/motor/${s}/SKILL.md" "${SKILLS_DIR}/${s}/SKILL.md"
-done
+# el motor (coach) → instalado como ~/.claude/skills/brain-coach/
+mkdir -p "$COACH_DIR"
+cp "${TMP}/motor/${MOTOR_SRC}/SKILL.md" "${COACH_DIR}/SKILL.md"
 # actualizar (Code-only) global, con su script
 mkdir -p "${SKILLS_DIR}/actualizar"
 cp "${TMP}/motor/actualizar/SKILL.md" "${SKILLS_DIR}/actualizar/SKILL.md"
@@ -120,14 +120,13 @@ rm -rf "${COACH_DIR}/kit.new"
 cp -R "${TMP}/kit" "${COACH_DIR}/kit.new"
 rm -rf "${COACH_DIR}/kit"
 mv "${COACH_DIR}/kit.new" "${COACH_DIR}/kit"
-# comandos slash (Code-only): ~/.claude/commands/
+# comandos slash (Code-only): ~/.claude/commands/ con prefijo brain-
 COMMANDS_DIR="${HOME}/.claude/commands"
 mkdir -p "$COMMANDS_DIR"
-for c in "${COMMANDS[@]}"; do
-  cp "${TMP}/commands/${c}.md" "${COMMANDS_DIR}/${c}.md"
-done
+cp "${TMP}/commands/${CONSERJE}.md" "${COMMANDS_DIR}/${CONSERJE}.md"                          # /brain (el conserje)
+for c in "${TOOLKIT[@]}"; do cp "${TMP}/commands/${c}.md" "${COMMANDS_DIR}/brain-${c}.md"; done   # /brain-<x>
 echo "  ✓ método instalado global (motor + kit de ${#SKILLS_USO[@]} skills) en ~/.claude/skills/"
-echo "  ✓ comandos instalados en ~/.claude/commands/ (toolkit /sabe-* completo)"
+echo "  ✓ comandos instalados en ~/.claude/commands/ (toolkit /brain-* completo)"
 
 cat <<EOF
 
@@ -137,7 +136,7 @@ cat <<EOF
 
 Próximo paso: abrí Claude Code (o Cowork) en la carpeta donde quieras tu sistema y escribí:
 
-   /sabe                  ← el conserje: tu toolkit + dónde vas parado (empezá por acá)
-   /sabe-coach            ← el coach: arma/resetea tu sistema, te ubica y propone el próximo paso
+   /brain                 ← el conserje: tu toolkit + dónde vas parado (empezá por acá)
+   /brain-coach           ← el coach: arma/resetea tu sistema, te ubica y propone el próximo paso
 
 EOF

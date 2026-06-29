@@ -1,8 +1,8 @@
-# SABE
+# Agentic Second Brain
 
-*Second-brain Agentic Build Engine.[^1]* SABE dónde están tus cosas y sabe qué hacer con tus pedidos.
+*Tu segundo cerebro, agéntico.* Tu asistente sabe dónde están tus cosas y qué hacer con tus pedidos, desde el arranque.
 
-Claude arranca cada sesión sin saber quién sos, cómo trabajás ni dónde está lo importante. SABE lo corta: una carpeta con archivos de texto plano que lee al inicio, así deja de improvisar.
+Claude arranca cada sesión sin saber quién sos, cómo trabajás ni dónde está lo importante. Agentic Second Brain lo corta: una carpeta con archivos de texto plano que lee al inicio, así deja de improvisar.
 
 A diferencia de las notas que guardás para vos, esta carpeta es compartida: vos y tu asistente la leen y editan, pero el que trabaja desde ella es el agente, cargando lo que cada tarea necesita para actuar.
 
@@ -34,20 +34,20 @@ El plugin trae slash commands que funcionan apenas lo instalás, sin configurar 
 
 | Comando | Qué hace |
 |---|---|
-| `/sabe` | El conserje: te muestra las herramientas y dónde vas parado |
-| `/sabe-coach` | Arma tu sistema personal, de a un escalón (el motor del método) |
-| `/sabe-slop` | Saca el olor a IA de un texto en una pasada |
-| `/sabe-write` | Redacta o reescribe en tu voz |
-| `/sabe-prompt` | Convierte un pedido crudo en un prompt listo para pegar en cualquier chat de IA |
-| `/sabe-panel` | 2 a 5 revisores con miradas distintas sobre algo antes de mandarlo |
-| `/sabe-council` | Un concilio de 5 asesores para una decisión con peso |
-| `/sabe-verify` | El gate antes de mandar: chequea que el output cumpla lo pedido y fact-checkea sus datos |
-| `/sabe-deck` | Arma una presentación por etapas, de bruto a final |
-| `/sabe-audit` | Chequeo de salud de tu segundo cerebro |
-| `/sabe-doc` | Cierra la sesión: rutea todo lo durable a su lugar |
-| `/sabe-simple` | ¿Perdiste el hilo? Estado en simple: dónde estamos, qué hacés vos, qué sigo yo |
+| `/brain` | El conserje: te muestra las herramientas y dónde vas parado |
+| `/brain-coach` | Arma tu sistema personal, de a un escalón (el motor del método) |
+| `/brain-slop` | Saca el olor a IA de un texto en una pasada |
+| `/brain-write` | Redacta o reescribe en tu voz |
+| `/brain-prompt` | Convierte un pedido crudo en un prompt listo para pegar en cualquier chat de IA |
+| `/brain-panel` | 2 a 5 revisores con miradas distintas sobre algo antes de mandarlo |
+| `/brain-council` | Un concilio de 5 asesores para una decisión con peso |
+| `/brain-verify` | El gate antes de mandar: chequea que el output cumpla lo pedido y fact-checkea sus datos |
+| `/brain-deck` | Arma una presentación por etapas, de bruto a final |
+| `/brain-audit` | Chequeo de salud de tu segundo cerebro |
+| `/brain-doc` | Cierra la sesión: rutea todo lo durable a su lugar |
+| `/brain-simple` | ¿Perdiste el hilo? Estado en simple: dónde estamos, qué hacés vos, qué sigo yo |
 
-Las del toolkit son de fábrica y sirven igual para todos; `/sabe-coach` arma la parte que es tuya (tus proyectos, tu identidad, tus propias skills). Un *skill* es una receta guardada que dispara una frase: usar estas es la forma más rápida de ver qué es uno antes de armar el tuyo.
+Las del toolkit son de fábrica y sirven igual para todos; `/brain-coach` arma la parte que es tuya (tus proyectos, tu identidad, tus propias skills). Un *skill* es una receta guardada que dispara una frase: usar estas es la forma más rápida de ver qué es uno antes de armar el tuyo.
 
 Corren como slash commands en Cowork y en Claude Code, sin configurar nada. En Cowork además las podés disparar describiendo lo que querés.
 
@@ -55,17 +55,17 @@ Corren como slash commands en Cowork y en Claude Code, sin configurar nada. En C
 
 ### Cowork (sin terminal)
 
-1. Escribí `/setup-cowork install sabe@sabe` (el nombre se repite porque es `plugin@marketplace`).
+1. Escribí `/setup-cowork install brain@agentic-second-brain` (el nombre se repite porque es `plugin@marketplace`).
 2. Abrí o creá la carpeta donde quieras que viva tu brain. Mejor una sincronizada: Drive, iCloud o Dropbox.
-3. Escribí `/sabe` para arrancar. Pregunta antes de crear nada, nunca arma carpetas por atrás, y en Cowork el plugin se actualiza solo.
+3. Escribí `/brain` para arrancar. Pregunta antes de crear nada, nunca arma carpetas por atrás, y en Cowork el plugin se actualiza solo.
 
 ### Claude Code
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/brunogiel/sabe/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/install.sh | bash
 ```
 
-Instala el método y los comandos de forma global y no toca tu carpeta del brain. Después abrí la carpeta donde querés trabajar y escribí `/sabe` para arrancar.
+Instala el método y los comandos de forma global y no toca tu carpeta del brain. Después abrí la carpeta donde querés trabajar y escribí `/brain` para arrancar.
 
 ## Por qué funciona
 
@@ -105,22 +105,22 @@ La regla es simple: tiene que existir un router claro (`CLAUDE.md` o `AGENTS.md`
 Para desinstalar en Claude Code:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/brunogiel/sabe/main/uninstall.sh | SB_YES=1 bash
+curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/uninstall.sh | SB_YES=1 bash
 ```
 
-En Cowork, desinstalá el plugin desde la UI o escribí `/plugin uninstall sabe`.
+En Cowork, desinstalá el plugin desde la UI o escribí `/plugin uninstall brain`.
 
 ## Si venías de "Agentic Second Brain"
 
-SABE es el mismo método, con nombre propio. Si lo instalaste antes (comandos `/asb-*`), reinstalá para pasar a `/sabe-*` y borrá a mano lo viejo. Tu carpeta del brain no se toca.
+Agentic Second Brain es el mismo método, con nombre propio. Si lo instalaste antes (comandos `/asb-*`), reinstalá para pasar a `/brain-*` y borrá a mano lo viejo. Tu carpeta del brain no se toca.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/brunogiel/sabe/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/install.sh | bash
 rm -rf ~/.claude/skills/agentic-second-brain-coach
 for c in asb asb-coach asb-slop asb-write asb-prompt asb-panel asb-council asb-deck asb-audit asb-doc asb-simple asb-triage; do rm -f ~/.claude/commands/$c.md; done
 ```
 
-En Cowork: desinstalá el plugin viejo desde la UI y reinstalá con `/setup-cowork install sabe@sabe`.
+En Cowork: desinstalá el plugin viejo desde la UI y reinstalá con `/setup-cowork install brain@agentic-second-brain`.
 
 ## La escalera
 
@@ -141,11 +141,11 @@ El coach lee `ESTADO.md` y `ESCALERA.md`, te dice dónde estás y propone un sol
 
 ## Portabilidad
 
-Tu brain son archivos de texto. Podés abrir la misma carpeta en Cowork, Claude Code, Codex o Cursor. Los skills de uso viven en `skills/` y se disparan desde la tabla **Mis skills** de `CLAUDE.md`, que Codex y Cursor alcanzan por `AGENTS.md`. Lo único específico de Claude es el motor de armado (`/sabe-coach`, y en Claude Code el updater `actualizar`); para otros agentes, `AGENTS.md` trae un fallback.
+Tu brain son archivos de texto. Podés abrir la misma carpeta en Cowork, Claude Code, Codex o Cursor. Los skills de uso viven en `skills/` y se disparan desde la tabla **Mis skills** de `CLAUDE.md`, que Codex y Cursor alcanzan por `AGENTS.md`. Lo único específico de Claude es el motor de armado (`/brain-coach`, y en Claude Code el updater `actualizar`); para otros agentes, `AGENTS.md` trae un fallback.
 
 ## Skills
 
-La mayoría del kit es el toolkit de arriba. Sumá `/sabe-triage` (tu brief del día) cuando conectes una fuente por MCP: mail, calendario o tareas. Dos skills más no tienen comando, y el coach las suma a medida que subís: `crear-skill` (armá el tuyo) y `evaluar-skill` (medí un skill contra su rúbrica).
+La mayoría del kit es el toolkit de arriba. Sumá `/brain-triage` (tu brief del día) cuando conectes una fuente por MCP: mail, calendario o tareas. Dos skills más no tienen comando, y el coach las suma a medida que subís: `crear-skill` (armá el tuyo) y `evaluar-skill` (medí un skill contra su rúbrica).
 
 ## Filosofía
 
@@ -162,5 +162,3 @@ Hecho por [Bruno Gielczynsky](https://www.linkedin.com/in/brunogiel/). Parte de 
 ## Licencia
 
 MIT. Usalo, forkealo, hacelo tuyo.
-
-[^1]: Sí, el acrónimo es forzado. 🫠

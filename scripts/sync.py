@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sincroniza los comandos /sabe-* del toolkit con su kit-skill.
+"""Sincroniza los comandos /brain-* del toolkit con su kit-skill.
 
 Fuente única de verdad = la kit-skill (`kit/skills/<skill>/SKILL.md`).
 El comando (`commands/<cmd>.md`) se arma como:
@@ -20,19 +20,20 @@ corrrunla despues de editar una kit-skill, y/o como check en pre-commit / CI.
 import os
 import sys
 
-# comando -> kit-skill (los 11 del toolkit; sabe y sabe-coach NO mapean a una kit-skill)
+# comando -> kit-skill (los 11 del toolkit; brain y brain-coach NO mapean a una kit-skill).
+# Los comandos viven con nombre pelado en el repo (commands/slop.md) para verse brain:slop en el plugin.
 PAIRS = {
-    "sabe-slop": "anti-slop",
-    "sabe-write": "redactar",
-    "sabe-prompt": "prompt-optimizer",
-    "sabe-panel": "panel",
-    "sabe-council": "council",
-    "sabe-deck": "ppt-builder",
-    "sabe-audit": "auditar-sistema",
-    "sabe-doc": "documenta",
-    "sabe-simple": "simple",
-    "sabe-triage": "triage",
-    "sabe-verify": "verificar",
+    "slop": "anti-slop",
+    "write": "redactar",
+    "prompt": "prompt-optimizer",
+    "panel": "panel",
+    "council": "council",
+    "deck": "ppt-builder",
+    "audit": "auditar-sistema",
+    "doc": "documenta",
+    "simple": "simple",
+    "triage": "triage",
+    "verify": "verificar",
 }
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

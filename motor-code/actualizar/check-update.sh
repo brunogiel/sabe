@@ -5,9 +5,9 @@
 # Uso:  bash check-update.sh
 set -euo pipefail
 
-REPO="brunogiel/sabe"
+REPO="brunogiel/agentic-second-brain"
 RAW="https://raw.githubusercontent.com/${REPO}/main"
-LOCAL_FILE="${HOME}/.claude/skills/sabe-coach/VERSION"
+LOCAL_FILE="${HOME}/.claude/skills/brain-coach/VERSION"
 
 if [ ! -f "$LOCAL_FILE" ]; then
   echo "No encuentro $LOCAL_FILE. ¿Está instalado el método (corriste install.sh)?"

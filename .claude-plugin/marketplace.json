@@ -1,25 +1,25 @@
 {
-  "name": "sabe",
+  "name": "agentic-second-brain",
   "owner": {
     "name": "brunogiel",
     "url": "https://github.com/brunogiel"
   },
   "plugins": [
     {
-      "name": "sabe",
+      "name": "brain",
       "source": "./",
-      "description": "SABE (Second-brain Agentic Build Engine): un metodo instalable para que Claude (Code o Cowork) deje de adivinar quien sos. Tu segundo cerebro agentico en archivos de texto. Trae un toolkit de comandos /sabe que funciona el dia cero y un coach que arma el resto de a un escalon. Sin terminal en Cowork.",
-      "version": "2.28.0",
+      "description": "Agentic Second Brain: un metodo instalable para que Claude (Code o Cowork) deje de adivinar quien sos. Tu segundo cerebro agentico en archivos de texto plano. Trae un toolkit de comandos /brain que funciona el dia cero y un coach que arma el resto de a un escalon. Sin terminal en Cowork.",
+      "version": "2.29.0",
       "author": {
         "name": "Bruno Gielczynsky",
         "url": "https://www.linkedin.com/in/brunogiel/"
       },
       "license": "MIT",
       "keywords": [
-        "sabe",
         "agentic-second-brain",
         "agentic-os",
         "second-brain",
+        "brain",
         "productivity",
         "coach",
         "onboarding",
