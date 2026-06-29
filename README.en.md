@@ -110,14 +110,15 @@ curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main
 
 In Cowork, uninstall the plugin from the UI or type `/plugin uninstall brain`.
 
-## Coming from "Agentic Second Brain"?
+## Coming from an earlier version (SABE or ASB)?
 
-Agentic Second Brain is the same method, now with its own name. If you installed it earlier (the `/asb-*` commands), reinstall to move to `/brain-*` and remove the old artifacts by hand. Your brain folder is left untouched.
+Same method: it's now called **Agentic Second Brain**, and the toolkit is the `/brain-*` commands. If you installed it earlier, when it was `/sabe-*` or `/asb-*`, clean up the old install and reinstall. Your brain folder is left untouched.
 
 ```bash
+# 1. clean up any older version (sabe-* and asb-* in one pass) — your brain is untouched
+curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/uninstall.sh | SB_YES=1 bash
+# 2. install the new version (/brain-*)
 curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/install.sh | bash
-rm -rf ~/.claude/skills/agentic-second-brain-coach
-for c in asb asb-coach asb-slop asb-write asb-prompt asb-panel asb-council asb-deck asb-audit asb-doc asb-simple asb-triage; do rm -f ~/.claude/commands/$c.md; done
 ```
 
 In Cowork: uninstall the old plugin from the UI and reinstall with `/setup-cowork install brain@agentic-second-brain`.
