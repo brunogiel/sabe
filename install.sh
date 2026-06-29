@@ -13,7 +13,7 @@
 #   1. EL MÉTODO (global, ~/.claude/skills/): se instala como una app. El motor (el coach, +
 #      el updater actualizar que es Code-only) más el kit que el coach usa (kit/brain + kit/skills)
 #      bundled adentro del coach. Invisible; se usa vía /brain-coach.
-#   2. TU BRAIN (esta carpeta): SOLO lo tuyo — CLAUDE.md (router) + ESTADO.md + ESCALERA.md +
+#   2. TU BRAIN (esta carpeta): SOLO lo tuyo — CLAUDE.md (índice maestro) + ESTADO.md + ESCALERA.md +
 #      AGENTS.md, las carpetas PARA + 0. Inbox, tu identidad en "2. Áreas/yo/", y skills/ (los
 #      skills que usás, que el coach te va sumando). Nada del método ensucia tu carpeta.
 # Descarga atómica: si algo falla, no te deja a medias. Después: abrí Claude acá y escribí /brain-coach
@@ -30,8 +30,8 @@ RAW="https://raw.githubusercontent.com/${REPO}/${BRANCH}"
 
 # --- el método (global) ---
 SKILLS_DIR="${HOME}/.claude/skills"
-COACH_DIR="${SKILLS_DIR}/brain-coach"          # el coach + sus piezas + el kit, bundled (instalado con prefijo brain-)
-MOTOR_SRC="brain-coach"                        # el skill motor en el repo (skills/brain-coach); en el plugin se ve brain:brain-coach
+COACH_DIR="${SKILLS_DIR}/coach"          # el coach + sus piezas + el kit, bundled (global, mismo nombre que el plugin)
+MOTOR_SRC="coach"                        # el skill motor en el repo (skills/coach); en el plugin se ve brain:coach
 SKILLS_USO=("redactar" "anti-slop" "crear-skill" "evaluar-skill" "auditar-sistema" "triage" "ppt-builder" "panel" "council" "prompt-optimizer" "documenta" "simple" "verificar")  # kit/skills
 
 # --- el brain que se scaffoldea (desde kit/brain/) ---
@@ -98,7 +98,7 @@ for c in "${TOOLKIT[@]}"; do fetch "commands/${c}.md" "commands/${c}.md"; done
 
 # ============ EL MÉTODO (global, ~/.claude/skills/) ============
 mkdir -p "$SKILLS_DIR"
-# el motor (coach) → instalado como ~/.claude/skills/brain-coach/
+# el motor (coach) → instalado como ~/.claude/skills/coach/
 mkdir -p "$COACH_DIR"
 cp "${TMP}/motor/${MOTOR_SRC}/SKILL.md" "${COACH_DIR}/SKILL.md"
 # actualizar (Code-only) global, con su script

@@ -132,7 +132,7 @@ Después armá **el tuyo**: algo que repitas de verdad (regla de 3). Va en `skil
 Abajo, la anatomía de un skill como modelo de lo que tiene que tener cualquiera (tomamos `actualizar`, el updater de Code, como muestra):
 
 **Qué hace (el patrón a copiar):**
-1. **[DET]** Leer la versión publicada del kit (el archivo `VERSION` del repo) y compararla con la instalada (`~/.claude/skills/brain-coach/VERSION`).
+1. **[DET]** Leer la versión publicada del kit (el archivo `VERSION` del repo) y compararla con la instalada (`~/.claude/skills/coach/VERSION`).
 2. **[LAT]** Si hay una nueva, contarte qué cambió (del `CHANGELOG`) y preguntarte: *"¿te la instalo?"*.
 3. **[DET]** Si decís que sí, bajar lo nuevo.
 
@@ -152,7 +152,7 @@ description: >
 # actualizar: bajar las mejoras del kit
 
 ## Flujo
-1. [DET] Leé la versión publicada (VERSION del repo) y la instalada (~/.claude/skills/brain-coach/VERSION).
+1. [DET] Leé la versión publicada (VERSION del repo) y la instalada (~/.claude/skills/coach/VERSION).
 2. [LAT] Si la publicada es más nueva: mostrá qué cambió (CHANGELOG) y preguntá "¿te la instalo?".
 3. [DET] Con el OK: bajá los archivos nuevos y actualizá la VERSION instalada.
 
@@ -234,7 +234,7 @@ El truco del status: `ESTADO.md` es un archivo chico (nivel + proyectos activos 
 
 La regla, en **2 baldes** (así tu carpeta se ve limpia y sabés qué es qué):
 
-1. **👁 TU BRAIN (esta carpeta) — solo lo tuyo.** Tu contexto: las carpetas PARA + `0. Inbox/`, tu identidad (`2. Áreas/yo/`), tu progreso (`ESTADO.md` + `ESCALERA.md`), el `CLAUDE.md` raíz (router) + `AGENTS.md`. Y **`skills/`: los skills que usás** (redactar, anti-slop, triage, auditar, crear-skill, evaluar-skill, ppt-builder, panel + los que armes vos). Los ves, los abrís, aprendés cómo están. No vienen todos de una: el coach te los va sumando a medida que avanzás. **Nada del método ensucia tu carpeta.**
+1. **👁 TU BRAIN (esta carpeta) — solo lo tuyo.** Tu contexto: las carpetas PARA + `0. Inbox/`, tu identidad (`2. Áreas/yo/`), tu progreso (`ESTADO.md` + `ESCALERA.md`), el `CLAUDE.md` raíz (índice maestro) + `AGENTS.md`. Y **`skills/`: los skills que usás** (redactar, anti-slop, triage, auditar, crear-skill, evaluar-skill, ppt-builder, panel + los que armes vos). Los ves, los abrís, aprendés cómo están. No vienen todos de una: el coach te los va sumando a medida que avanzás. **Nada del método ensucia tu carpeta.**
 
 2. **🔒 EL MÉTODO — se instala como una app, fuera de tu carpeta.** En **Claude Code** vive global en `~/.claude/skills/`; en **Cowork** se instala como **plugin** (sin terminal). En los dos casos el coach lleva sus piezas (esta doctrina `reference.md`, la `plantilla-proyecto.md`, los `ejemplos.md`) como hermanas de su `SKILL.md`, y el **kit** (`kit/brain/` = archivos base, `kit/skills/` = catálogo de skills de uso) viaja con el método. La migración de Projects es un doc del coach (`migracion.md`), no un skill aparte; en Code además está el updater `actualizar` (Code-only; en Cowork el plugin se actualiza solo). Se usa por nombre (`/brain-coach`); no vive en tu carpeta.
 

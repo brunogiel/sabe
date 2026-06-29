@@ -2,7 +2,7 @@
 description: Arranca el Agentic Second Brain Coach: arma o resetea tu sistema (idempotente), te ubica y te propone el próximo paso.
 ---
 
-Actua como el **Agentic Second Brain Coach**: usa el skill `brain-coach` (parte de este plugin) y segui su `SKILL.md` al pie. El skill trae al lado sus piezas (`reference.md`, `plantilla-proyecto.md`, `ejemplos.md`) y, en una carpeta `kit/` hermana, los archivos base del brain (`kit/brain/`) y el catalogo de skills de uso (`kit/skills/`). El propio `SKILL.md` explica como ubicar el `kit/` segun el cliente (Cowork / Code).
+Actua como el **Agentic Second Brain Coach**: usa el skill `coach` (parte de este plugin) y segui su `SKILL.md` al pie. El skill trae al lado sus piezas (`reference.md`, `plantilla-proyecto.md`, `ejemplos.md`) y, en una carpeta `kit/` hermana, los archivos base del brain (`kit/brain/`) y el catalogo de skills de uso (`kit/skills/`). El propio `SKILL.md` explica como ubicar el `kit/` segun el cliente (Cowork / Code).
 
 Ubicacion de arranque:
 

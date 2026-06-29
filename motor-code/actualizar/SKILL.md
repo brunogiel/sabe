@@ -17,18 +17,18 @@ Es infraestructura del kit: ya viene hecho (a diferencia de los skills que armá
 ## Flujo
 1. **[DET]** Comparar versiones. En Claude Code corré el script `check-update.sh` de esta carpeta;
    en Cowork (sin terminal) hacé el mismo chequeo con tus herramientas: bajá el `VERSION` del repo
-   (`https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/VERSION`) y compará con `~/.claude/skills/brain-coach/VERSION`.
+   (`https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/VERSION`) y compará con `~/.claude/skills/coach/VERSION`.
 2. **[LAT]** Si la publicada es más nueva: mostrá qué cambió (del `CHANGELOG` del repo) en 2-3 líneas
    y preguntá *"¿te la instalo?"*. No bajes nada sin un "dale".
 3. **[DET]** Con el OK: corré el `install.sh` del repo (vuelve a bajar el motor y los archivos del
-   kit; respeta lo tuyo, no pisa tus entregables). El `install.sh` ya refresca `~/.claude/skills/brain-coach/VERSION`
+   kit; respeta lo tuyo, no pisa tus entregables). El `install.sh` ya refresca `~/.claude/skills/coach/VERSION`
    al número nuevo, no hace falta tocarlo a mano.
 
 Fijate que el paso 1 y el 3 son mecánicos (script) y el 2 es criterio (vos decidís). Eso es DET vs LAT en vivo.
 
 ## Qué lee y escribe
-- **Lee:** `~/.claude/skills/brain-coach/VERSION` (local) y el `VERSION` / `CHANGELOG.md` del repo.
-- **Escribe:** solo con tu OK, baja archivos del kit y actualiza `~/.claude/skills/brain-coach/VERSION`. Nunca toca tus
+- **Lee:** `~/.claude/skills/coach/VERSION` (local) y el `VERSION` / `CHANGELOG.md` del repo.
+- **Escribe:** solo con tu OK, baja archivos del kit y actualiza `~/.claude/skills/coach/VERSION`. Nunca toca tus
   carpetas PARA ni tus skills propios.
 
 ## Garantía: tu carpeta no se toca (solo el motor global)
@@ -40,5 +40,5 @@ Actualizar **refresca el motor global** (`~/.claude/skills/`: el coach y sus pie
 
 ## Señales de que salió bien
 - Sabés si estás al día o no, sin entrar a internet a mano.
-- Si actualizó, `~/.claude/skills/brain-coach/VERSION` quedó en el número nuevo.
+- Si actualizó, `~/.claude/skills/coach/VERSION` quedó en el número nuevo.
 - Nada se bajó sin tu OK; tus cosas quedaron intactas.

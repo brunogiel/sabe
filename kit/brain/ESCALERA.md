@@ -72,7 +72,7 @@ Agentes 100% autónomos que actúan sin tu OK, auto-mejora de skills en loop cer
 > El coach mantiene estas marcas. ¿Querés activar un skill antes de tiempo? Decile al coach *"sumame `<nombre>`"*. En Claude Code, si querés chequear updates del método, escribí **`actualizar`**; en Cowork el plugin se actualiza solo.
 
 ### 🗂 Archivos base (vienen al instalar, no se pisan)
-- [x] `CLAUDE.md`: el router: lo primero que tu asistente lee al arrancar.
+- [x] `CLAUDE.md`: el índice maestro: lo primero que tu asistente lee al arrancar.
 - [x] `ESTADO.md`: el tablero fino (dónde estás, qué hay activo).
 - [x] `ESCALERA.md`: este tracker.
 - [x] `AGENTS.md`: puntero para que Codex/Cursor encuentren tu `CLAUDE.md`.
@@ -99,6 +99,6 @@ Agentes 100% autónomos que actúan sin tu OK, auto-mejora de skills en loop cer
 - [ ] `documenta` → `/brain-doc`: guarda lo durable de una conversación en su lugar.
 - [ ] `verificar` → `/brain-verify`: el gate antes de mandar: chequea que el output cumpla lo pedido y fact-checkea sus datos.
 - [ ] `simple` → `/brain-simple`: te baja el estado de la charla en simple cuando perdés el hilo.
-- [ ] `crear-skill` *(N3)*: te guía a armar tu primer skill propio (no tiene comando, lo abrís para aprender).
+- [ ] `crear-skill` → `/brain-newskill` *(N3)*: te guía a armar tu primer skill propio; además la abrís para ver cómo es un skill por dentro.
 - [ ] `triage` → `/brain-triage` *(N4)*: el brief del día (mail + agenda + tareas por MCP).
-- [ ] `evaluar-skill` *(N6)*: mide un skill contra su propia rúbrica y lo afina.
+- [ ] `evaluar-skill` → `/brain-evalskill` *(N6)*: mide un skill contra su propia rúbrica y lo afina.

@@ -5,7 +5,7 @@ description: El conserje de tu Agentic Second Brain: te muestra las herramientas
 Sos el conserje del Agentic Second Brain. La persona quiere ubicarse. Hacelo corto y claro:
 
 1. **Mirá si ya tiene sistema** (`CLAUDE.md`, `ESTADO.md` o `ESCALERA.md` en la carpeta actual).
-   - **Si NO hay nada:** mostrale en una línea que el toolkit ya se usa desde el día cero, y **arrancá el coach directo** para armar la base con la persona (seguí el skill `brain-coach`, lo mismo que haría `/brain-coach`). No lo dejes solo apuntando a otro comando: empezá el onboarding vos.
+   - **Si NO hay nada:** mostrale en una línea que el toolkit ya se usa desde el día cero, y **arrancá el coach directo** para armar la base con la persona (seguí el skill `coach`, lo mismo que haría `/brain-coach`). No lo dejes solo apuntando a otro comando: empezá el onboarding vos.
    - **Si YA hay:** leé `ESCALERA.md` y bajá UNA línea de dónde va, tipo `📍 Nivel X · próximo paso: <lo que diga ESCALERA>`. Después, el menú.
 
 2. **Mostrá el toolkit.** Vienen puestas y funcionan sin configurar nada (si es tu primera vez, probá `/brain-slop` o `/brain-prompt`: andan en 30 segundos):
@@ -18,9 +18,14 @@ Sos el conserje del Agentic Second Brain. La persona quiere ubicarse. Hacelo cor
    **Para ver mejor antes de soltar algo**
    - `/brain-panel` : 2 a 5 revisores con miradas distintas.
    - `/brain-council` : concilio de 5 asesores para una decisión con peso.
+   - `/brain-verify` : el gate antes de mandar: chequea que cumpla lo pedido y fact-checkea los datos.
 
    **Para producir**
    - `/brain-deck` : arma una presentación por etapas.
+
+   **Para armar tus propios skills**
+   - `/brain-newskill` : armá un skill nuevo siguiendo la anatomía que funciona.
+   - `/brain-evalskill` : medí un skill contra su rúbrica y proponé mejoras.
 
    **Para la sesión y el sistema**
    - `/brain-audit` : chequeo de salud de tu segundo cerebro.

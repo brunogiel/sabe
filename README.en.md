@@ -4,7 +4,7 @@
 
 Claude starts every session not knowing who you are, how you work, or where things live. Agentic Second Brain fixes that: a folder with plain-text files it reads at startup, so it stops guessing.
 
-Unlike notes you keep for yourself, this folder is shared: you and your assistant both read and edit it, but the agent is the one working from it, loading what each task needs to act.
+This folder is shared: you and your assistant both read and edit it, but the agent is the one working from it, loading what each task needs to act.
 
 You install one coach, and it builds the rest with you, one step at a time. Works with **Cowork** and **Claude Code**; **Codex** and other agents use the same folder through `AGENTS.md`.
 

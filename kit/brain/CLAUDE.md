@@ -1,7 +1,7 @@
 <!--
   SUPER MD — archivo raíz de tu sistema (Agentic Second Brain).
-  Es un ROUTER fino: es lo que se lee SIEMPRE al arrancar, así que se mantiene corto.
-  La doctrina completa NO vive acá: la maneja el coach (vive global con él). Esto es solo el router.
+  Es un ÍNDICE MAESTRO fino: es lo que se lee SIEMPRE al arrancar, así que se mantiene corto.
+  La doctrina completa NO vive acá: la maneja el coach (vive global con él). Esto es solo el índice maestro.
   Lo que ve el usuario empieza en la línea de abajo.
 -->
 
@@ -46,7 +46,7 @@ Cuando tengas varios proyectos, esta tabla rutea al asistente apenas decís algo
 | `<tu frase típica>` | `<tu carpeta>` |
 
 ## Mis skills (los ves, los usás)
-Los skills que usás viven en `skills/` (carpeta a la vista; los abrís y editás). **Esta tabla es el router:** mi asistente la lee al arrancar y, cuando digo una frase de la izquierda, va y sigue ese skill. Anotá cada uno con su frase gatillo — **un skill sin fila acá no se dispara.**
+Los skills que usás viven en `skills/` (carpeta a la vista; los abrís y editás). **Esta tabla es el índice maestro:** mi asistente la lee al arrancar y, cuando digo una frase de la izquierda, va y sigue ese skill. Anotá cada uno con su frase gatillo — **un skill sin fila acá no se dispara.**
 | Si digo… | Skill |
 |---|---|
 | *(ejemplo)* "pasalo a mi tono" | `skills/redactar/` |
@@ -64,4 +64,4 @@ Tareas que se ejecutan en horario, sin que estés. (Vacío hasta que armes la pr
 El código vive en su repo (`~/Code/<proyecto>/`); el contexto se queda acá. En el repo, un `CLAUDE.md` corto apunta de vuelta. Si no programás, ignorá esto. Detalle: pedíselo al coach.
 
 ---
-> El método (doctrina, plantillas, versión) vive global con el coach (`~/.claude/skills/brain-coach/`), **no en esta carpeta**. Tu carpeta es solo tuya. Para crecer, escribí **`/brain-coach`**.
+> El método (doctrina, plantillas, versión) vive global con el coach (`~/.claude/skills/coach/`), **no en esta carpeta**. Tu carpeta es solo tuya. Para crecer, escribí **`/brain-coach`**.
