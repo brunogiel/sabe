@@ -105,7 +105,7 @@ You do not have to migrate. The coach reads your structure and keeps it.
 
 The rule is simple: there must be a clear master index (`CLAUDE.md` or `AGENTS.md`) that says where things live. If your structure already works, the coach does not rename it or force PARA. It only proposes small improvements: inbox, shortcuts, decision logs, skills, or session state.
 
-## What it touches
+## What it touches and how to undo it
 
 - The Claude Code installer only installs the global method.
 - The coach creates files in your brain only after you approve.
@@ -119,7 +119,7 @@ To uninstall in Claude Code:
 curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/uninstall.sh | SB_YES=1 bash
 ```
 
-In Cowork, uninstall the plugin from the UI or type `/plugin uninstall brain`.
+In Cowork, uninstall the plugin from the UI (**Customize → Plugins**).
 
 ## The ladder
 

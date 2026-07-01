@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.32.1 (2026-07-01)
+- **Repasada final pre-release (docs).** Tres fixes chicos que salieron de la revisión de higiene:
+  - `README.md` + `README.en.md`: la sección de desinstalar decía que en Cowork se podía usar `/plugin uninstall brain`, contradiciendo la propia sección de instalación (`/plugin` es de Claude Code terminal, no existe en Cowork). Ahora dice solo el camino real: UI → **Customize → Plugins**.
+  - `README.en.md`: título "What it touches" completado a "What it touches and how to undo it" (paridad con el ES "Qué toca y cómo deshacerlo").
+  - `commands/brain.md`: el menú del conserje no mencionaba `/brain-triage`, que sí se instala y aparece en el autocomplete. Agregado en una categoría propia ("Configurable, pide una fuente conectada por MCP") para no romper la promesa de "sin configurar nada" del resto del toolkit.
+- Tocados: `README.md`, `README.en.md`, `commands/brain.md`, `VERSION`, `.claude-plugin/{plugin,marketplace}.json`, `CHANGELOG.md`.
+
 ## 2.32.0 (2026-06-29)
 - **Fix: en Cowork los comandos del plugin aparecían SIN prefijo (`/coach`, `/slop`, `/doc`…) en vez de `/brain-*`.** Causa: Cowork muestra cada comando del plugin por su **nombre de archivo**, no por el namespace `brain:` (al revés de lo que asumían las 2.29-2.31, que nombraban los archivos pelados `commands/coach.md` para verse "limpios" `brain:coach`). Resultado: comandos genéricos, colisionables, que no matcheaban los docs (siempre dijeron `/brain-*`). Arreglado renombrando los 14 archivos de comando a `commands/brain-*.md` (`brain-coach.md`, `brain-slop.md`, …); el conserje sigue `brain.md` → `/brain`. Ahora Cowork y el curl muestran lo mismo: `/brain-coach`, `/brain-slop`, etc. El install por curl se simplifica a copia 1:1. El skill motor vuelve a `brain-coach` (folder + name) por consistencia con su comando; `sync.py` con keys `brain-*`. (Esto revierte el experimento de "nombres pelados" de 2.31.0, que se basaba en un supuesto equivocado sobre cómo Cowork muestra los comandos.)
 - **Aclaración de instalación en Cowork (sin terminal):** NO se usa `/setup-cowork install` (eso es el registry oficial curado) ni `/plugin` (eso es Claude Code terminal). En la app: **Customize → Plugins → Personal plugins → "+" → Add marketplace → "Add from a repository" → `brunogiel/agentic-second-brain` → Install `brain`.** Corregido en README ES+EN.

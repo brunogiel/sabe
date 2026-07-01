@@ -119,7 +119,7 @@ Para desinstalar en Claude Code:
 curl -fsSL https://raw.githubusercontent.com/brunogiel/agentic-second-brain/main/uninstall.sh | SB_YES=1 bash
 ```
 
-En Cowork, desinstalá el plugin desde la UI o escribí `/plugin uninstall brain`.
+En Cowork, desinstalá el plugin desde la UI (**Customize → Plugins**).
 
 ## La escalera
 
